@@ -1,0 +1,40 @@
+.card-container {
+	background: linear-gradient(121.05deg, #b0f5fa 0%, #7ac6dd 100%);
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0px 0px 15px -5px;
+	transition: 0.3s;
+	animation: ease-out;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.card-container:hover {
+	transform: scale(1.1);
+	box-shadow: 0px 0px 15px 0px;
+}
+
+.image-container img {
+	margin-top: 15px;
+	width: 100px;
+	overflow: hidden;
+}
+
+.card-content {
+	margin: 1rem;
+	padding: 1rem;
+	height: 250px;
+}
+
+h3{
+	color:white;
+}
+p {
+	margin-bottom: 5px;
+	padding: 0;
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+}
