@@ -4,14 +4,14 @@ import "./App.css"
 import { Routing } from "./Routing/Routing"
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Welcome to React Router!</h1>
-      <BrowserRouter>
-        <Routing />
-      </BrowserRouter>
-    </div>
-  )
+	return (
+		<div className="App">
+
+			<BrowserRouter>
+				<Routing />
+			</BrowserRouter>
+		</div>
+	)
 }
 
 export default App
