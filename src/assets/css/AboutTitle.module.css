@@ -1,0 +1,40 @@
+/* Root */
+:root {
+  --blue: rgb(32, 81, 137);
+  --red: #d23b32;
+  --gray: #4A4E57;
+}
+/* Title Area */
+.aboutArea{
+  padding: 50px 0;
+  width: 60%;
+  margin: 0 auto;
+}
+.title{
+  color: var(--blue);
+  font-size: 40px !important;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 600 !important;
+  margin: 20px 0 !important;
+  letter-spacing: 1px !important;
+}
+.border{
+  border-top: 2px solid var(--red);
+}
+.details{
+  font-size: 16px !important;
+  margin: 20px 0 !important;
+  color: var(--gray);
+  text-align: center;
+}
+@media only screen and (max-width: 768px){
+  .aboutArea{
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 550px){
+  .aboutArea{
+    width: 100%;
+  }
+}

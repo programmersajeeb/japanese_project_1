@@ -1,11 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Box } from '@mui/material';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/home/Home/Home';
 function App() {
   return (
-    <div className="App">
-      welcome to mi japan
-    </div>
+    <Box>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>   
+    </Box>
   );
 }
 
