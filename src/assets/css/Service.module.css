@@ -1,0 +1,39 @@
+/* Root */
+:root {
+  --blue: #205189;
+  --cyan-blue: #212934;
+  --tuna: #4a4e57;
+}
+/* Service Card Area */
+.icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 90px;
+  width: 90px;
+  line-height: 45px;
+  border: 2px solid var(--blue);
+  box-sizing: content-box;
+  border-radius: 50%;
+}
+.icon > i{
+  font-size:45px;
+  margin: 0 auto;
+  color: var(--blue);
+}
+.title{
+  font-size: 32px !important;
+  font-weight: 400 !important;
+  color: var(--cyan-blue);
+  text-align: center;
+  transition: 0.2s;
+}
+.title:hover{
+  color: #d23b32;
+}
+.details{
+  color: var(--tuna);
+  text-align: center;
+  margin: 20px 0 !important;
+}

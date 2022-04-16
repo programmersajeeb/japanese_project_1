@@ -1,0 +1,36 @@
+/* Fonts */
+/* Zilla Slab Font */
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+/* Root */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Zilla Slab', serif !important;
+}
+a{
+  text-decoration: none;
+  cursor: pointer !important;
+}
+ul{
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+/* Navigationbar */
+.css-1t29gy6-MuiToolbar-root{
+  padding: 0 !important;
+}
+.menuItem{
+  color: #212934;
+  transition: 0.2s;
+  font-size: 16px !important;
+  letter-spacing: 0 !important;
+  margin-left: 30px !important;
+}
+.menuItem:hover{
+  color: #cf2e2e;
+}

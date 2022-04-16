@@ -1,0 +1,37 @@
+/* Root */
+:root {
+  --white: #FFFFFF;
+  --fuchsia: rgba(255,255,255,0.6);
+  --fuchsia2: rgba(255,255,255,0.8);
+  --green: #65bc7b;
+  --ebony-clay: #26303e;
+}
+/* Footer Content */
+.title{
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 20px !important;
+  text-transform: uppercase;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  color: var(--white);
+}
+.description, ul>li{
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.8 !important;
+  color: var(--fuchsia);
+  padding: 10px 0 !important;
+}
+.menu > li {
+  border-bottom: 1px solid var(--ebony-clay);
+}
+.link{
+  color: var(--fuchsia2);
+  font-size: 16px !important;
+  transition: 0.2s;
+}
+.link:hover{
+  color: var(--green);
+}

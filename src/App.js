@@ -1,17 +1,23 @@
-import * as React from "react"
-import { BrowserRouter } from "react-router-dom"
-import "./App.css"
-import { Routing } from "./Routing/Routing"
-
+import { Box } from '@mui/material';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/home/Home/Home';
+import Mission from './components/Mission/Mission';
+import Jobs from './components/Jobs/Jobs';
 function App() {
 	return (
-		<div className="App">
-
+		<Box>
 			<BrowserRouter>
-				<Routing />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/" element={<Home />} />
+					<Route path="/mission" element={<Mission />} />
+					<Route path="/job" element={<Jobs />} />
+					<Route path="/contact" element={<Jobs />} />
+				</Routes>
 			</BrowserRouter>
-		</div>
-	)
+		</Box>
+	);
 }
 
 export default App
