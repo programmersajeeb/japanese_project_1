@@ -9,17 +9,17 @@ import Message from '../Message/Message';
 import Quote from '../Quote/Quote';
 
 const Home = () => {
-  return (
-    <Box>
-      <Navigation />
-      <Banner />
-      <Luminous />
-      <Message />
-      <Quote />
-      <Announcements />
-      <Footer />
-    </Box>
-  );
+	return (
+		<Box>
+			<Navigation />
+			<Banner />
+			<Luminous />
+			<Message />
+			<Quote />
+			<Announcements />
+			<Footer />
+		</Box>
+	);
 };
 
 export default Home;

@@ -30,12 +30,14 @@ const Navigation = () => {
 									</Link>
 								</Box>
 								<Box>
-									<Link to="/" className='menuItem'>home</Link>
-									<Link to="/mission" className='menuItem'>Mission</Link>
-									<Link to="/job" className='menuItem'>work</Link>
-									<Link to="/" className='menuItem'>Company Profile</Link>
-									<Link to="/" className='menuItem'>Inquiries</Link>
-									<Link to="/" className='menuItem'>privacy policy</Link>
+									<Link to="/" className='menuItem'>ホーム</Link>
+									<Link to="/mission" className='menuItem'>ミッション</Link>
+									<Link to="/job" className='menuItem'>仕事</Link>
+									<Link to="/company" className='menuItem'>
+										会社概要</Link>
+									<Link to="/" className='menuItem'>
+										お問合せ</Link>
+									<Link to="/" className='menuItem'>プライバシーポリシー</Link>
 								</Box>
 							</Box>
 

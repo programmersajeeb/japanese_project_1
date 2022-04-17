@@ -20,8 +20,10 @@ function Jobs() {
 				</div>
 				<Container sx={{ mt: 4 }}>
 					<div>
-						<h1>当社のビジネスは大きく分けて３つとなります。</h1>
+						<h1 style={{ textAlign: "center" }}>当社のビジネスは大きく分けて３つとなります。</h1>
 					</div>
+
+					<hr className='style-eight' />
 
 					<Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
 						{jobData.map((job) => (
@@ -37,7 +39,7 @@ function Jobs() {
 					</Grid>
 
 
-					<Grid container spacing={2}>
+					<Grid container spacing={2} style={{ margin: "50px 0" }}>
 						<Grid item xs={6} md={6}>
 							<img src={reqrute} alt="" width="500" />
 						</Grid>
@@ -52,7 +54,6 @@ function Jobs() {
 								</p>
 							</div>
 						</Grid>
-
 					</Grid>
 				</Container>
 			</div>
