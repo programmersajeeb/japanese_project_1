@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
-import images from '../../../assets/images/ceo.jpg';
+import images from '../../../assets/images/ceo.png';
 import '../../../assets/css/golobal.css';
 import styles from '../../../assets/css/Message.module.css';
 

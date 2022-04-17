@@ -1,20 +1,20 @@
 [
     {
         "id": 1,
-        "title": "Dispatching business",
+        "title": "人材派遣業務",
         "icon": "fas fa-users",
-        "description": "Luminous already has a large number of dispatch destinations. We have created an environment where dispatch work can be performed continuously, such as not only IT and development but also nursing care and welfare, and we are constantly updating the dispatch destination information. Please show your talent at the Luminous dispatch destination."
+        "description": "エムアイジャパン ではすでに多数の派遣先がございます。IT、開発だけでなく介護・福祉、など継続的に派遣業務ができる環境を整え常に派遣先情報をアップデートしております。貴方の才能をぜひ、エムアイジャパンの派遣先で発揮してください。"
     },
     {
         "id": 2,
-        "title": "Referral work",
-        "icon": "fas fa-user-friends",
-        "description": "Not only dispatching, but also in referral work, there are a lot of variations in matching between you and the company, so after in-depth interviews and interviews, we will approach the referral destination firmly."
+        "title": "紹介業務",
+        "icon": "fas fa-globe",
+        "description": "派遣だけでなく、紹介業務においてもあなたと企業のマッチングの中ではバリエーションが豊富ですので綿密なヒアリングと面談の上、紹介先にもしっかりアプローチさせていただきます。"
     },
     {
         "id": 3,
-        "title": "Visa consulting",
+        "title": "ビザコンサルティング",
         "icon": "fas fa-address-card",
-        "description": "Abundant achievements! We believe that visa consulting is most important to respond to the environment and needs of the acquirer. Also, as the environment changes, it is important to continue visa consulting. Experienced staff and administrative scrivener are our strengths."
+        "description": "豊富な実績！ビザのコンサルティングは取得者の環境やニーズに応じて対応することがもっとも大切と考えてます。また、環境は変わるので継続的にビザのコンサルティングを行うことも大切です。経験豊富なスタッフと行政書士が当社の強みです。"
     }
 ]
