@@ -87,10 +87,10 @@ const Footer = () => {
 							</Typography>
 						</Box>
 						<Box>
-							<Link to='/'><i class="fab fa-facebook-f"></i></Link>
-							<Link to='/'><i class="fab fa-twitter"></i></Link>
-							<Link to='/'><i class="fab fa-instagram"></i></Link>
-							<Link to='/'><i class="fab fa-pinterest-p"></i></Link>
+							<a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+							<a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+							<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+							<a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a>
 						</Box>
 					</Box>
 				</Container>

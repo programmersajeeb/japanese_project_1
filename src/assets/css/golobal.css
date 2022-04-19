@@ -24,15 +24,15 @@ ul{
 .css-1t29gy6-MuiToolbar-root{
   padding: 0 !important;
 }
-.menuItem{
-  color: #212934;
+.navMenu{
+  color: #212934 !important;
   transition: 0.2s;
-  font-size: 16px !important;
+  font-size: 14px !important;
   letter-spacing: 0 !important;
-  margin-left: 30px !important;
+  margin-left: 20px !important;
 }
-.menuItem:hover{
-  color: #cf2e2e;
+.navMenu:hover{
+  color: #cf2e2e !important;
 }
 .title_header {
 	position: relative;
@@ -70,4 +70,42 @@ hr.style-eight:after {
 	font-size: 1.5em;
 	padding: 0 0.25em;
 	background: rgb(255, 255, 255);
+}
+
+/* Banner Area */
+.slick-prev, .slick-next{
+	width: 63px !important;
+    height: 63px !important;
+    line-height: 63px !important;
+		background-color: rgba(0,0,0,.5) !important;
+		font-size: 25px !important;
+		display: none !important;
+		transition: 0.2s;
+}
+.bannerMainArea:hover .slick-prev, .bannerMainArea:hover .slick-next {
+	display: block !important;
+}
+.slick-next {
+	right: 0px !important;
+}
+.slick-prev {
+	left: 0px !important;
+	z-index: 9999!important;
+}
+.slick-next:before {
+	content: '>' !important;
+	font-family: awb-icons;
+}
+.slick-prev:before {
+	content: '<' !important;
+	font-family: awb-icons;
+}
+.slick-prev:before, .slick-next:before {
+	font-family: 'slick';
+	font-size: 20px;
+	line-height: 1;
+	opacity: .75;
+	color: #fff !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
