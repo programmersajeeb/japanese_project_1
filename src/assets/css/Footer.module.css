@@ -35,3 +35,35 @@
 .link:hover{
   color: var(--green);
 }
+.footerSocial > a{
+  font-size: 16px;
+  margin: 0 10px 10px;
+  cursor: pointer;
+  transition-duration: .2s;
+  color: rgba(255,255,255,0.8);
+}
+.footerSocial{
+  display: inline-block;
+  position: relative;
+}
+
+.footerSocial .tooltiptext {
+  visibility: hidden;
+  /* width: 120px; */
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+.footerSocial:hover .tooltiptext {
+  visibility: visible;
+}

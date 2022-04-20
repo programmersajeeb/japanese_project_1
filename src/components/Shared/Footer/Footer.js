@@ -9,8 +9,7 @@ const Footer = () => {
 	return (
 		<Box sx={{ backgroundColor: '#212934' }}>
 			<Container sx={{ padding: '50px 0' }}>
-				<Box>
-					<Grid container spacing={0}>
+					<Grid container spacing={2}>
 						<Grid xs={12} sm={6} md={4} xl={4}>
 							<Box>
 								<Typography variant="body1" gutterBottom className={styles.title}>
@@ -39,8 +38,7 @@ const Footer = () => {
 							</Box>
 						</Grid>
 						<Grid xs={12} sm={6} md={4} xl={4}>
-							<Box>
-								<Box>
+								<Box sx={{padding:'0 20px'}}>
 									<Typography variant="body1" gutterBottom className={styles.title}>
 										QUICK LINK
 									</Typography>
@@ -53,10 +51,8 @@ const Footer = () => {
 										<li><Link to='/' className={styles.link}>&gt; プライバシーポリシー</Link></li>
 									</ul>
 								</Box>
-							</Box>
 						</Grid>
 						<Grid item xs={12} sm={6} md={4} xl={4}>
-							<Box>
 								<Box>
 									<Typography variant="body1" gutterBottom className={styles.title}>
 										お問い合わせ
@@ -65,18 +61,16 @@ const Footer = () => {
 										<li><span>住所:</span> 栃木県足利市鹿島町１０９２番地15
 											エクセレントヴィレッジ２０１号</li>
 
-										<li><span>Phone :</span><a href="tel:０５０３７０２４５８４">０５０－３７０２－４５８４</a></li>
+										<li><span>Phone :</span><a className={styles.link} href="tel:０５０３７０２４５８４">０５０－３７０２－４５８４</a></li>
 
-										<li><span>Email  :</span>	<a href="mailto:mijapan4@gmail.com">
+										<li><span>Email  :</span>	<a className={styles.link} href="mailto:mijapan4@gmail.com">
 											mijapan4@gmail.com
 										</a></li>
 										<li><span>Web:</span> <Link to='/' className={styles.link}>https://mi-japan.net/ </Link></li>
 									</ul>
 								</Box>
-							</Box>
 						</Grid>
 					</Grid>
-				</Box>
 			</Container>
 			<Box sx={{ backgroundColor: '#1D242D', padding: '30px 0' }}>
 				<Container>
@@ -87,10 +81,22 @@ const Footer = () => {
 							</Typography>
 						</Box>
 						<Box>
+							<Box className={styles.footerSocial}>
 							<a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+							<span className={styles.tooltiptext}>Facebook</span>
+							</Box>
+							<Box className={styles.footerSocial}>
 							<a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+							<span className={styles.tooltiptext}>Twitter</span>
+							</Box>
+							<Box className={styles.footerSocial}>
 							<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+							<span className={styles.tooltiptext}>Instagram</span>
+							</Box>
+							<Box className={styles.footerSocial}>
 							<a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+							<span className={styles.tooltiptext}>Pinterest</span>
+							</Box>
 						</Box>
 					</Box>
 				</Container>

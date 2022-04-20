@@ -20,7 +20,7 @@ const Announcement = (props) => {
                                     <Link className={styles.overlayIcon} to='/'><i class="fas fa-search"></i></Link>
                                 </Box>
                                 <Typography variant="h2" component="h2" className={styles.overlayTitle}>
-                                    May 2021 Established Luminous Co., Ltd.
+                                    {title}
                                 </Typography>
                                 <Link to='/' style={{display:'block',textAlign:'center', color:'#212934', fontSize:'13px'}}>
                                     news
