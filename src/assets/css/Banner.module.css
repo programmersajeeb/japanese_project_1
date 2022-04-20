@@ -36,3 +36,33 @@
   background: #5aa86c;
   color: #ffffff;
 }
+
+
+/* Media Query */
+@media only screen and (max-width: 991px){
+  .title{
+    font-size: 40px !important;
+  }
+  .subTitle{
+    font-size: 25px !important;
+  }
+}
+@media only screen and (max-width: 768px){
+  .title{
+    font-size: 35px !important;
+  }
+  .subTitle{
+    font-size: 20px !important;
+  }
+}
+@media only screen and (max-width: 551px){
+  .title{
+    font-size: 30px !important;
+  }
+  .subTitle{
+    font-size: 16px !important;
+  }
+  .bannerBtn{
+    padding: 8px 12px;
+  }
+}
