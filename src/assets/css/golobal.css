@@ -34,6 +34,9 @@ ul{
 .navMenu:hover{
   color: #cf2e2e !important;
 }
+svg>path{
+	fill: #212934 !important;;
+}
 .title_header {
 	position: relative;
 	text-align: center;

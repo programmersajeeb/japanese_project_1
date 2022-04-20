@@ -52,23 +52,31 @@ const Navigation = () => {
     >
       <List>
           <ListItem button>
-            <ListItemText> <Link className={mobileNavItem} to='/'>Home</Link> </ListItemText>
+            <ListItemText> <Link className={`mobileNavItem navMenu`} to='/'>ホーム</Link> </ListItemText>
           </ListItem>
           <Divider />
           <ListItem button>
-            <ListItemText> <Link className={mobileNavItem} to='/about'>About</Link> </ListItemText>
+            <ListItemText> <Link className={`mobileNavItem navMenu`} to='/about'>ミッション</Link> </ListItemText>
           </ListItem>
           <Divider />
           <ListItem button>
-            <ListItemText> <Link className={mobileNavItem} to='/services'>Services</Link> </ListItemText>
+            <ListItemText> <Link className={`mobileNavItem navMenu`} to='/services'>仕事</Link> </ListItemText>
           </ListItem>
           <Divider />
           <ListItem button>
-            <ListItemText> <Link className={mobileNavItem} to='/portfolio'>Portfolio</Link> </ListItemText>
+            <ListItemText> <Link className={`mobileNavItem navMenu`} to='/contact'>会社概要</Link> </ListItemText>
           </ListItem>
           <Divider />
           <ListItem button>
-            <ListItemText> <Link className={mobileNavItem} to='/contact'>Contact</Link> </ListItemText>
+            <ListItemText> <Link className={`mobileNavItem navMenu`} to='/contact'>会社概要</Link> </ListItemText>
+          </ListItem>
+          <Divider />
+          <ListItem button>
+            <ListItemText> <Link className={`mobileNavItem navMenu`} to='/contact'>お問合せ</Link> </ListItemText>
+          </ListItem>
+          <Divider />
+          <ListItem button>
+            <ListItemText> <Link className={`mobileNavItem navMenu`} to='/contact'>プライバシーポリシー</Link> </ListItemText>
           </ListItem>
           <Divider />
       </List>
