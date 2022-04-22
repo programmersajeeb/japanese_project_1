@@ -58,11 +58,11 @@ input[type="submit"]{
   width: min-content;
   cursor: pointer;
 }
-ul {
+.contactUl {
   margin: 10px 0 0;
   padding-left: 30px !important;
 }
-ul > li {
+.contactUl > li {
   font-size: 21px !important;
   line-height: 35.7px !important;
   color: var(--tuna);

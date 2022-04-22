@@ -19,7 +19,7 @@ const ContactForm = () => {
         })
 }
   return (
-    <Box sx={{marginTop:'50px'}}>
+    <Box sx={{margin:'50px 0'}}>
       <Grid container spacing={5}>
         <Grid item xs={12} sm={12} md={8} xl={8}>
           <Box>
@@ -98,7 +98,7 @@ const ContactForm = () => {
             </Typography>
           </Box>
           <Box>
-            <ul>
+            <ul className={styles.contactUl}>
               <li><span>Email address:</span>	&nbsp;<a className={styles.link} href="mailto:mijapan4@gmail.com">mijapan4@gmail.com</a></li>
               <li><span>Web:</span>	&nbsp;<Link to='/' className={styles.link}>https://mi-japan.net/ </Link></li>
               <li>careers@luminous-jp.net</li>
