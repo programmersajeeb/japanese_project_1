@@ -4,15 +4,26 @@ import styles from '../../../../assets/css/ContactArea.module.css';
 import { Box, Grid, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const ContactForm = () => {
-  const { register, formState: { errors }, handleSubmit } = useForm();
+  const { register, formState: { errors }, handleSubmit, reset } = useForm();
+  const onSubmit = data => {
+    console.log(data);
+    axios
+        .post('', data)
+        .then(res => {
+            if (res.data.insertedId) {
+                reset();
+            }
+        })
+}
   return (
     <Box sx={{marginTop:'50px'}}>
       <Grid container spacing={5}>
         <Grid item xs={12} sm={12} md={8} xl={8}>
           <Box>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
             <Box>
             <Grid container spacing={2}>
             <Grid item xs={12} sm={12} md={6} xl={6}>
