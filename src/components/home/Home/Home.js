@@ -4,6 +4,7 @@ import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Announcements from '../Announcements/Announcements';
 import Banner from '../banner/Banner/Banner';
+import ContactArea from '../contactArea/ContactArea/ContactArea';
 import Luminous from '../luminous/Luminous/Luminous';
 import Message from '../Message/Message';
 import Quote from '../Quote/Quote';
@@ -17,6 +18,7 @@ const Home = () => {
 			<Message />
 			<Quote />
 			<Announcements />
+			<ContactArea />
 			<Footer />
 		</Box>
 	);
