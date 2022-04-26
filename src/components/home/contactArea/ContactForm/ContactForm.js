@@ -11,7 +11,7 @@ const ContactForm = () => {
   const onSubmit = data => {
     console.log(data);
     axios
-        .post('', data)
+        .post('http://localhost:5000/reports', data)
         .then(res => {
             if (res.data.insertedId) {
                 reset();
@@ -99,8 +99,8 @@ const ContactForm = () => {
           </Box>
           <Box>
             <ul className={styles.contactUl}>
-              <li><span>Email address:</span>	&nbsp;<a className={styles.link} href="mailto:mijapan4@gmail.com">mijapan4@gmail.com</a></li>
-              <li><span>Web:</span>	&nbsp;<Link to='/' className={styles.link}>https://mi-japan.net/ </Link></li>
+              <li><span>Email address:</span>	&nbsp;<a className={styles.link} href="mailto:info@luminous-jp.net">info@luminous-jp.net</a></li>
+              <li><span>Web:</span>	&nbsp;<Link to='/' className={styles.link}>http://luminous-jp.net/</Link></li>
               <li>careers@luminous-jp.net</li>
             </ul>
           </Box>
