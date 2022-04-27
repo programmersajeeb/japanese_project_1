@@ -4,6 +4,7 @@ const AddProduct = () => {
   return (
     <div>
       only Admin can add or delate a Product 
+      <h3>hello </h3>
     </div>
   );
 };
