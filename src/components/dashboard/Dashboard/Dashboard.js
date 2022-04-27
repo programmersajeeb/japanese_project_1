@@ -10,11 +10,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Route, Routes, Link, useLocation } from 'react-router-dom';
-import {Button} from '@mui/material';git 
+import {Button} from '@mui/material';
 import DashboardHome from './DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 const drawerWidth = 200;
+
 function Dashboard(props) {
     const {window} = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -22,6 +23,7 @@ function Dashboard(props) {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+
     const drawer = (
         <div style={{backgroundColor:"rgba(193,164,130,.3)", minHeight:"100vh"}}>
             <Toolbar/>
@@ -41,6 +43,7 @@ function Dashboard(props) {
                             <Button color="inherit">Make Admin</Button>
                         </Link>
                         </Box>
+                        
                     </Box>
             
         </div>
@@ -143,6 +146,7 @@ function Dashboard(props) {
                     }
                 }}>
                 <Toolbar/>
+                {/* <BrowserRouter> */}
                 <Routes>
                     <Route exact="exact" path="/" element={<DashboardHome />} />
                     <Route exact="exact" path="/Dashboard/makeAdmin" element={<MakeAdmin />} />
