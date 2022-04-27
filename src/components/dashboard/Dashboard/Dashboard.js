@@ -10,27 +10,18 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Route, Routes, Link, useLocation } from 'react-router-dom';
-import {Button} from '@mui/material';
-// import DashboardHome from '../DashboardHome/DashboardHome';
-// import MakeAdmin from '../MakeAdmin/MakeAdmin';
-// import AddProduct from '../AddProduct/AddProduct';
-// import ManageProducts from '../ManageProducts/ManageProducts';
-// import useAuth from '../../../hooks/useAuth';
-// import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import {Button} from '@mui/material';git 
 import DashboardHome from './DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 const drawerWidth = 200;
-
 function Dashboard(props) {
     const {window} = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     let location = useLocation();
-    // const {admin} = useAuth();
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-
     const drawer = (
         <div style={{backgroundColor:"rgba(193,164,130,.3)", minHeight:"100vh"}}>
             <Toolbar/>
@@ -43,9 +34,6 @@ function Dashboard(props) {
             </Link>
             </Box>
             <Box style={{textAlign:"left"}}>
-            {/* <Link style={{textDecoration:"none", color:"#757575"}} to={`${url}`}>
-                <Button color="inherit">Dashboard</Button>
-            </Link> */}
             </Box>
             </Box>
                         <Box>
@@ -53,17 +41,6 @@ function Dashboard(props) {
                             <Button color="inherit">Make Admin</Button>
                         </Link>
                         </Box>
-                        {/* <Box>
-                        <Link style={{textDecoration:"none", color:"#757575"}} to={`${url}/addProduct`}>
-                            <Button color="inherit">Add Product</Button>
-                        </Link>
-                        </Box>
-                        <Box>
-                        <Link style={{textDecoration:"none", color:"#757575"}} to={`${url}/manageProducts`}>
-                            <Button color="inherit">Manage Products</Button>
-                        </Link>
-                        </Box> */}
-                        
                     </Box>
             
         </div>
@@ -166,24 +143,10 @@ function Dashboard(props) {
                     }
                 }}>
                 <Toolbar/>
-                {/* <BrowserRouter> */}
                 <Routes>
-                    {/* <Route exact="exact" path={path}>
-                        <DashboardHome></DashboardHome>
-                    </Route> */}
                     <Route exact="exact" path="/" element={<DashboardHome />} />
                     <Route exact="exact" path="/Dashboard/makeAdmin" element={<MakeAdmin />} />
-                    {/* <AdminRoute path={`${path}/addProduct`}>
-                        <AddProduct></AddProduct>
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/manageProducts`}>
-                        <ManageProducts></ManageProducts>
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/makeAdmin`}>
-                        <MakeAdmin></MakeAdmin>
-                    </AdminRoute> */}
                 </Routes>
-                {/* </BrowserRouter> */}
             </Box>
         </Box>
     );
