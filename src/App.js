@@ -19,8 +19,8 @@ function App() {
           <Route path="/job" element={<Jobs />} />
           <Route path="/company" element={<Company />} />
           <Route path="/dashboard/*" element={<Dashboard />}>
-					<Route path="makeAdmin" element={<MakeAdmin />} />
-          <Route path="addproduct" element={<AddProduct />} />
+            <Route path="makeAdmin" element={<MakeAdmin />} />
+            <Route path="addproduct" element={<AddProduct />} />
           </Route>
         </Routes>
       </BrowserRouter>
