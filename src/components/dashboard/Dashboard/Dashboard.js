@@ -1,51 +1,99 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { Route, Routes, Link, useLocation } from 'react-router-dom';
-import {Button} from '@mui/material';
-import DashboardHome from './DashboardHome/DashboardHome';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import MenuIcon from "@mui/icons-material/Menu";
+import {Button} from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import PropTypes from "prop-types";
+import * as React from "react";
+import {Link, Outlet, Route, Routes} from "react-router-dom";
+import DashboardHome from "../DashboardHome/DashboardHome";
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
     const {window} = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    let location = useLocation();
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
 
     const drawer = (
-        <div style={{backgroundColor:"rgba(193,164,130,.3)", minHeight:"100vh"}}>
+        <div
+            style={{
+                backgroundColor: "rgba(193,164,130,.3)",
+                minHeight: "100vh"
+            }}>
             <Toolbar/>
             <Divider/>
-            <Box style={{paddingLeft:"10px"}}>
-            <Box>
-            <Box style={{textAlign:"left"}}>
-            <Link style={{textDecoration:"none", color:"#757575"}} to="/">
-                <Button color="inherit">Clock Shop</Button>
-            </Link>
-            </Box>
-            <Box style={{textAlign:"left"}}>
-            </Box>
-            </Box>
-                        <Box>
-                        <Link style={{textDecoration:"none", color:"#757575"}} to="/Dashboard/makeAdmin">
-                            <Button color="inherit">Make Admin</Button>
+            <Box style={{
+                    paddingLeft: "10px"
+                }}>
+                <Box>
+                    <Box
+                        style={{
+                            textAlign: "left"
+                        }}>
+                        <Link
+                            style={{
+                                textDecoration: "none",
+                                color: "#757575"
+                            }}
+                            to="/">
+                            <Button color="inherit">Clock Shop</Button>
                         </Link>
-                        </Box>
-                        
                     </Box>
-            
+                    <Box
+                        style={{
+                            textAlign: "left"
+                        }}></Box>
+                </Box>
+                <Box>
+                    <Link
+                        style={{
+                            textDecoration: "none",
+                            color: "#757575", display:"block",
+                        }}
+                        to="/dashboard">
+                        <Button color="inherit">Home</Button>
+                    </Link>
+                    <Link
+                        style={{
+                            textDecoration: "none",
+                            color: "#757575"
+                        }}
+                        to="/dashboard/makeAdmin">
+                        <Button color="inherit">Make Admin</Button>
+                    </Link>
+                    <Link
+                        style={{
+                            textDecoration: "none",
+                            color: "#757575"
+                        }}
+                        to="/dashboard/addservice">
+                        <Button color="inherit">Add Service</Button>
+                    </Link>
+                    <Link
+                        style={{
+                            textDecoration: "none",
+                            color: "#757575"
+                        }}
+                        to="/dashboard/addannouncement">
+                        <Button color="inherit">Add Announcement</Button>
+                    </Link>
+                    <Link style={{ textDecoration: "none", color: "#757575" }} to="/dashboard/addslide">
+                        <Button color="inherit">Add Slide</Button>
+                    </Link>
+                    <Link style={{ textDecoration: "none", color: "#757575" }} to="/dashboard/manageslide">
+                        <Button color="inherit">Manage Slide</Button>
+                    </Link>
+                </Box>
+
+            </Box>
         </div>
     );
 
@@ -55,7 +103,7 @@ function Dashboard(props) {
 
     return (
         <Box sx={{
-                display: 'flex'
+                display: "flex"
             }}>
             <CssBaseline/>
             <AppBar
@@ -63,7 +111,7 @@ function Dashboard(props) {
                 sx={{
                     width: {
                         sm: `calc(100% - ${drawerWidth}px)`,
-                        backgroundColor:"rgba(193,164,130,.3)"
+                        backgroundColor: "rgba(193,164,130,.3)"
                     },
                     ml: {
                         sm: `${drawerWidth}px`
@@ -78,7 +126,7 @@ function Dashboard(props) {
                         sx={{
                             mr: 2,
                             display: {
-                                sm: 'none'
+                                sm: "none"
                             }
                         }}>
                         <MenuIcon/>
@@ -99,7 +147,6 @@ function Dashboard(props) {
                     }
                 }}
                 aria-label="mailbox folders">
-                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
                 <Drawer
                     container={container}
                     variant="temporary"
@@ -110,11 +157,11 @@ function Dashboard(props) {
                     }}
                     sx={{
                         display: {
-                            xs: 'block',
-                            sm: 'none'
+                            xs: "block",
+                            sm: "none"
                         },
-                        '& .MuiDrawer-paper' : {
-                            boxSizing: 'border-box',
+                        "& .MuiDrawer-paper" : {
+                            boxSizing: "border-box",
                             width: drawerWidth
                         }
                     }}>
@@ -124,11 +171,11 @@ function Dashboard(props) {
                     variant="permanent"
                     sx={{
                         display: {
-                            xs: 'none',
-                            sm: 'block'
+                            xs: "none",
+                            sm: "block"
                         },
-                        '& .MuiDrawer-paper' : {
-                            boxSizing: 'border-box',
+                        "& .MuiDrawer-paper" : {
+                            boxSizing: "border-box",
                             width: drawerWidth
                         }
                     }}
@@ -146,10 +193,9 @@ function Dashboard(props) {
                     }
                 }}>
                 <Toolbar/>
-                {/* <BrowserRouter> */}
+                <Outlet/>
                 <Routes>
-                    <Route exact="exact" path="/" element={<DashboardHome />} />
-                    <Route exact="exact" path="/Dashboard/makeAdmin" element={<MakeAdmin />} />
+                    <Route path="/" element={<DashboardHome />}/>
                 </Routes>
             </Box>
         </Box>

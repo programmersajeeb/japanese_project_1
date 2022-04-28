@@ -23,8 +23,8 @@ const Slide = (props) => {
                         </Typography>
                     </Box>
                     <Box sx={{marginTop:'40px'}}>
-                      <Link to='/' className={styles.bannerBtn}>detail</Link>
-                      <Link to='/' className={styles.bannerBtn}>inquiry</Link>
+                      <Link to='#inquirie' className={styles.bannerBtn}>detail</Link>
+                      <a href="#inquirie" className={styles.bannerBtn}>inquirie</a>
                     </Box>
                   </Box>
                 </Box>

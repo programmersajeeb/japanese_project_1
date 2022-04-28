@@ -6,7 +6,7 @@ import ContactForm from '../ContactForm/ContactForm';
 
 const ContactArea = () => {
   return (
-    <Box>
+    <Box id="inquirie">
       <Container>
           <Box sx={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'center' }}>
 						<Box className={styles.titleLeft}>
