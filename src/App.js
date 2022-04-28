@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SamplePage from "./components/Common/SamplePage/SamplePage";
 import Company from "./components/CompanyProfile/Company";
 import AddProduct from "./components/dashboard/AddProduct/AddProduct";
 import Dashboard from "./components/dashboard/Dashboard/Dashboard";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/mission" element={<Mission />} />
           <Route path="/job" element={<Jobs />} />
           <Route path="/company" element={<Company />} />
+          <Route path="/samplepage" element={<SamplePage />} />
           <Route path="/dashboard/*" element={<Dashboard />}>
             <Route path="makeAdmin" element={<MakeAdmin />} />
             <Route path="addproduct" element={<AddProduct />} />
