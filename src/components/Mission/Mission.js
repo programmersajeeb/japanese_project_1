@@ -16,8 +16,8 @@ function Mission() {
 					<div className="centered"> <h1>株式会社 エムアイジャパンのミッション</h1></div>
 				</div>
 				<Container className={styles.mission}>
-					<Grid container spacing={2}>
-						<Grid item xs={6} md={6}>
+					<Grid container spacing={4}>
+						<Grid item xs={12} md={6}>
 							<div className="starter_text">
 								<h1>私たちのミッション</h1>
 								<p>
@@ -30,8 +30,8 @@ function Mission() {
 								</p>
 							</div>
 						</Grid>
-						<Grid item xs={6} md={4}>
-							<img src={mission} alt="" />
+						<Grid item xs={12} md={4}>
+							<img src={mission} alt="" width="100%" />
 						</Grid>
 					</Grid>
 				</Container>

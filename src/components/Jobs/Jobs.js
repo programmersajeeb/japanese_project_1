@@ -40,10 +40,10 @@ function Jobs() {
 
 
 					<Grid container spacing={2} style={{ margin: "50px 0" }}>
-						<Grid item xs={6} md={6}>
-							<img src={reqrute} alt="" width="500" />
+						<Grid item xs={12} md={6}>
+							<img src={reqrute} alt="" width="100%" />
 						</Grid>
-						<Grid item xs={6} md={6}>
+						<Grid item xs={12} md={6}>
 							<div className="starter_text">
 								<h1>その他</h1>
 								<p>
