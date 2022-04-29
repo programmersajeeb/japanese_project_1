@@ -5,7 +5,7 @@ import '../../../assets/css/golobal.css';
 import styles from '../../../assets/css/AddServices.css';
 
 const AddService = () => {
-    const {register, handleSubmit, reset} = useForm();
+    const {register, formState: { errors }, handleSubmit, reset} = useForm();
     const onSubmit = data => {
         console.log(data);
         axios

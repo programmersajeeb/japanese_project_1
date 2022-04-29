@@ -13,17 +13,20 @@ import ManageSlide from "./components/dashboard/ManageSlide/ManageSlide";
 import Home from "./components/home/Home/Home";
 import Jobs from "./components/Jobs/Jobs";
 import Mission from "./components/Mission/Mission";
+import Contact from './components/Contact/Contact';
+import Privacy from './components/Privacy/Privacy';
 function App() {
   return (
     <Box>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/" element={<Home />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/job" element={<Jobs />} />
           <Route path="/company" element={<Company />} />
           <Route path="/samplepage" element={<SamplePage />} />
+          <Route path="/privacy" element={<Privacy />} />
+            <Route path="/contact" element={<Contact />} />
           <Route path="/dashboard/*" element={<Dashboard />}>
             <Route path="makeAdmin" element={<MakeAdmin />} />
             <Route path="addservice" element={<AddService />} />
@@ -31,6 +34,7 @@ function App() {
             <Route path="addslide" element={<AddSlide />} />
             <Route path="manageslide" element={<ManageSlide />} />
             <Route path="manageservices" element={<ManageServices />} />
+            
           </Route>
         </Routes>
       </BrowserRouter>

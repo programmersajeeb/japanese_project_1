@@ -1,12 +1,13 @@
 /* Root */
 :root {
-  --white: #FFFFFF;
+  --white: #4c545d;
   --fuchsia: rgba(255,255,255,0.6);
   --fuchsia2: rgba(255,255,255,0.8);
   --green: #65bc7b;
   --ebony-clay: #26303e;
 }
 /* Footer Content */
+
 .title{
   font-size: 14px !important;
   line-height: 1.5 !important;
@@ -14,21 +15,21 @@
   text-transform: uppercase;
   font-weight: 600 !important;
   letter-spacing: 0 !important;
-  color: var(--white);
+  color: var(--white) !important;
 }
 .description, ul>li{
   font-size: 16px !important;
   font-weight: 400 !important;
   letter-spacing: 0 !important;
   line-height: 1.8 !important;
-  color: var(--fuchsia);
+  color: var(--white)!important;
   padding: 10px 0 !important;
 }
 .menu > li {
   border-bottom: 1px solid var(--ebony-clay);
 }
 .link{
-  color: var(--fuchsia2) !important;
+  color: var(--white) !important;
   font-size: 16px !important;
   transition: 0.2s;
 }
@@ -40,7 +41,7 @@
   margin: 0 10px 10px;
   cursor: pointer;
   transition-duration: .2s;
-  color: rgba(255,255,255,0.8);
+  color: rgba(15, 14, 14, 0.8);
 }
 .footerSocial{
   display: inline-block;

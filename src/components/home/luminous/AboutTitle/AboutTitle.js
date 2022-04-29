@@ -12,7 +12,7 @@ const AboutTitle = () => {
 						エムアイジャパン ⇒ 日本企業の紹介先及び派遣先について
 					</Typography>
 					<Box className={styles.border}></Box>
-					<Typography variant="body1" gutterBottom className={styles.details}>
+					<Typography variant="body1" gutterBottom={true} className={styles.details}>
 						エムアイジャパンの一つの柱 。独自のノウハウや世界中の情報ルートから今の日本の職場
 						を元気にするお役立てができればと思ってます。
 					</Typography>

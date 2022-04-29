@@ -5,40 +5,41 @@ import styles from '../../../../assets/css/ContactArea.module.css';
 import ContactForm from '../ContactForm/ContactForm';
 
 const ContactArea = () => {
-  return (
-    <Box id="inquirie">
-      <Container>
-          <Box sx={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'center' }}>
-						<Box className={styles.titleLeft}>
-							<Box className={styles.titleSep}></Box>
-						</Box>
-						<Box sx={{ position: 'relative' }}>
-							<Typography variant="h1" component="h2" className={styles.title}>
-								Inquiries
-							</Typography>
-						</Box>
-						<Box className={styles.titleRight}>
-							<Box className={styles.titleSep}></Box>
-						</Box>
+	return (
+		<>
+			<Container>
+				<Box sx={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'center' }}>
+					<Box className={styles.titleLeft}>
+						<Box className={styles.titleSep}></Box>
 					</Box>
-          <Box>
-          <Typography variant="body1" gutterBottom className={styles.pra}>
-            For inquiries, please use the input home.
-          </Typography>
-          <Typography variant="body1" gutterBottom className={styles.pra}>
-            * Please note that it may take 3 or 4 days to reply.
-          </Typography>
-          <Typography variant="body1" gutterBottom className={styles.pra}>
-            Please enter your inquiry according to the email form below and press the send button.
-          </Typography>
-          <Typography variant="body1" gutterBottom className={styles.pra}>
-            We would appreciate it if you could contact us for referrals and dispatches, visa consultations, human resources consultations, dispatch / referral agencies and agents.
-          </Typography>
-          </Box>
-          <ContactForm />
-      </Container>
-    </Box>
-  );
+					<Box sx={{ position: 'relative' }}>
+						<Typography variant="h1" component="h2" className={styles.title}>
+							お問合せ
+						</Typography>
+					</Box>
+					<Box className={styles.titleRight}>
+						<Box className={styles.titleSep}></Box>
+					</Box>
+				</Box>
+				<Box>
+					<Typography variant="body1" gutterBottom={true} className={styles.pra}>
+						お問合せは入力ホームからお願いいたします。
+					</Typography>
+					<Typography variant="body1" gutterBottom={true} className={styles.pra}>
+						※尚、ご返信に関しては３，４日かかる場合がございますがご了承ください。
+					</Typography>
+					<Typography variant="body1" gutterBottom={true} className={styles.pra}>
+						下記、メールフォームに従ってお問合せ内容を入力し送信ボタンを押してください。
+					</Typography>
+					<Typography variant="body1" gutterBottom={true} className={styles.pra}>
+						紹介及び派遣、ビザの相談、また、企業様は人材についてのご相談、派遣・紹介業者及び代理店様についてもそれぞれこちらよりご連絡いただければと思います。
+					</Typography>
+				</Box>
+
+			</Container>
+			<ContactForm />
+		</>
+	);
 };
 
 export default ContactArea;
