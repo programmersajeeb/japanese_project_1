@@ -44,7 +44,7 @@ function Dashboard(props) {
                                 color: "#757575"
                             }}
                             to="/">
-                            <Button color="inherit">Clock Shop</Button>
+                            <Button color="inherit">Luminous</Button>
                         </Link>
                     </Box>
                     <Box
@@ -89,7 +89,10 @@ function Dashboard(props) {
                         <Button color="inherit">Add Slide</Button>
                     </Link>
                     <Link style={{ textDecoration: "none", color: "#757575" }} to="/dashboard/manageslide">
-                        <Button color="inherit">Manage Slide</Button>
+                        <Button color="inherit">Manage Slides</Button>
+                    </Link>
+                    <Link style={{ textDecoration: "none", color: "#757575" }} to="/dashboard/manageservices">
+                        <Button color="inherit">Manage Services</Button>
                     </Link>
                 </Box>
 
