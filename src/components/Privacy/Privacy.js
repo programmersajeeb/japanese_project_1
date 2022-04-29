@@ -16,7 +16,7 @@ function Privacy() {
 					<div className="centered"> <h1>プライバシーポリシー</h1></div>
 				</div>
 				<Container sx={{ my: 10 }}>
-					<Typography component="h2" variant="h6" gutterBottom>
+					<Typography component="h2" variant="h6" gutterBottom={true}>
 						プライバシーポリシーについて
 					</Typography>
 
@@ -24,7 +24,7 @@ function Privacy() {
 						私たちのプライバシーポリシーについての考え方。
 					</Typography>
 					<hr />
-					<Typography component="h2" variant="h6" gutterBottom>
+					<Typography component="h2" variant="h6" gutterBottom={true}>
 						プライバシーポリシー基本理念
 					</Typography>
 					<Typography paragraph>
@@ -32,13 +32,13 @@ function Privacy() {
 						を深く認識したうえで、その業務において取り扱いは十分に注意し管理することを社内規定に定め、それを遵守することを務めます。また、それに関連する書類や
 						組織体制なども配備しお客様との安心してお取引及びお手伝いできる環境を作っていくものとします。
 					</Typography>
-					<Typography component="h2" variant="h6" gutterBottom>
+					<Typography component="h2" variant="h6" gutterBottom={true}>
 						法令規範の遵守について
 					</Typography>
 					<Typography paragraph>
 						私たちは、個人情報に関する法令・国が定める指針、そのほか規範及び社会秩序を遵守したうえでより安全に個人情報の保護を適切に行います。
 					</Typography>
-					<Typography component="h2" variant="h6" gutterBottom>
+					<Typography component="h2" variant="h6" gutterBottom={true}>
 						個人情報の取得、利用、提供について
 					</Typography>
 					<Typography paragraph>
@@ -47,7 +47,7 @@ function Privacy() {
 						置を講じます。
 						また、取得した個人情報の目的外利用がないようにその処置も講じます。
 					</Typography>
-					<Typography component="h2" variant="h6" gutterBottom>
+					<Typography component="h2" variant="h6" gutterBottom={true}>
 						個人情報の適切な管理について
 					</Typography>
 					<Typography paragraph>
@@ -55,7 +55,7 @@ function Privacy() {
 						がないように十分に認識ができるよう合理的な安全対策を常に実施しております。
 						また、問題が発生した時には適切な是正措置も講じます。
 					</Typography>
-					<Typography component="h2" variant="h6" gutterBottom>
+					<Typography component="h2" variant="h6" gutterBottom={true}>
 						継続的な改善と安全対策について
 					</Typography>
 					<Typography paragraph>

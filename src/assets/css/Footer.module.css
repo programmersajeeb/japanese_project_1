@@ -15,7 +15,7 @@
   text-transform: uppercase;
   font-weight: 600 !important;
   letter-spacing: 0 !important;
-  color: var(--white)  !important;
+  color: var(--white) !important;
 }
 .description, ul>li{
   font-size: 16px !important;
@@ -41,7 +41,7 @@
   margin: 0 10px 10px;
   cursor: pointer;
   transition-duration: .2s;
-  color: rgba(255,255,255,0.8);
+  color: rgba(15, 14, 14, 0.8);
 }
 .footerSocial{
   display: inline-block;

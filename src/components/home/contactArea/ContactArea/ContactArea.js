@@ -6,7 +6,7 @@ import ContactForm from '../ContactForm/ContactForm';
 
 const ContactArea = () => {
 	return (
-		<Box>
+		<>
 			<Container>
 				<Box sx={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'center' }}>
 					<Box className={styles.titleLeft}>
@@ -22,22 +22,23 @@ const ContactArea = () => {
 					</Box>
 				</Box>
 				<Box>
-					<Typography variant="body1" gutterBottom className={styles.pra}>
+					<Typography variant="body1" gutterBottom={true} className={styles.pra}>
 						お問合せは入力ホームからお願いいたします。
 					</Typography>
-					<Typography variant="body1" gutterBottom className={styles.pra}>
+					<Typography variant="body1" gutterBottom={true} className={styles.pra}>
 						※尚、ご返信に関しては３，４日かかる場合がございますがご了承ください。
 					</Typography>
-					<Typography variant="body1" gutterBottom className={styles.pra}>
+					<Typography variant="body1" gutterBottom={true} className={styles.pra}>
 						下記、メールフォームに従ってお問合せ内容を入力し送信ボタンを押してください。
 					</Typography>
-					<Typography variant="body1" gutterBottom className={styles.pra}>
+					<Typography variant="body1" gutterBottom={true} className={styles.pra}>
 						紹介及び派遣、ビザの相談、また、企業様は人材についてのご相談、派遣・紹介業者及び代理店様についてもそれぞれこちらよりご連絡いただければと思います。
 					</Typography>
 				</Box>
-				<ContactForm />
+
 			</Container>
-		</Box>
+			<ContactForm />
+		</>
 	);
 };
 
