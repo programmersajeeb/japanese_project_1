@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../../../assets/css/golobal.css';
 import styles from '../../../../assets/css/ContactArea.module.css';
 import { Box, Grid, Typography, Container } from '@mui/material';
@@ -7,21 +7,47 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const ContactForm = () => {
+	const [message, setMessage] = useState("");
 	const { register, formState: { errors }, handleSubmit, reset } = useForm();
 	const onSubmit = data => {
 		console.log(data);
 		axios
-			.post('http://localhost:5000/reports', data)
+			.post('http://localhost:8080/reports', data)
 			.then(res => {
 				if (res.data.insertedId) {
+					alert('Report Successfully');
 					reset();
 				}
 			})
 	}
+	const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth(); 
+    const day = date.getDate(); 
+    const hours = date.getHours(); 
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+    
+    const addZero = (num) => `${num}`.padStart(2, '0');
+    
+    const formatted =
+      year +
+      '-' +
+      addZero(month + 1) +
+      '-' +
+      addZero(day) +
+      ' ' +
+      addZero(hours) +
+      ':' +
+      addZero(minutes) +
+			':' +
+			addZero(seconds);
+
+      console.log(formatted);
+			
+			
 	return (
 		<Box sx={{ backgroundColor: "#f2f2f2" }}>
-
-
 			<Container sx={{ p: 10, my: 5 }}>
 				<Grid container spacing={5}>
 					<Grid item xs={12} sm={12} md={8} xl={8}>
@@ -66,10 +92,15 @@ const ContactForm = () => {
 										<Box><label htmlFor="subject">Subject</label></Box>
 										<input type="text" id='subject' {...register("subject", { required: true })} />
 									</Box>
-
+									<Box>
+									<input style={{display:'none'}} type="text" value={formatted} {...register("time")} />
+									</Box>
+									<Box>
+									<input style={{display:'none'}} type="text" value={new Date()} {...register("date")} />
+									</Box>
 									<Box>
 										<label htmlFor="message">Message *</label>
-										<textarea id='message' />
+										<textarea id='message' {...register("report", { required: true })} />
 									</Box>
 								</Box>
 

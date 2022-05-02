@@ -8,7 +8,7 @@ import Announcement from '../Announcement/Announcement/Announcement';
 const Announcements = () => {
 	const [announcements, setAnnouncements] = useState([]);
 	useEffect(() => {
-		fetch('announcements.json')
+		fetch('http://localhost:8080/announcements')
 			.then(res => res.json())
 			.then(data => setAnnouncements(data))
 	}, []);
@@ -33,7 +33,7 @@ const Announcements = () => {
 						<Grid container spacing={2}>
 							{
 								announcements.map(announcement => <Announcement
-									key={announcement.id}
+									key={announcement._id}
 									announcement={announcement}
 								></Announcement>)
 							}

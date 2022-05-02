@@ -1,11 +1,11 @@
 import { Box } from '@mui/material';
 import React from 'react';
+import Reports from '../Reports/Reports';
 
 const DashboardHome = () => {
   return (
     <Box>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptates.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptates.</p>
+      <Reports />
     </Box>
   );
 };

@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SamplePage from "./components/Common/SamplePage/SamplePage";
 import Company from "./components/CompanyProfile/Company";
 import AddAnnouncement from "./components/dashboard/AddAnnouncement/AddAnnouncement";
 import AddService from "./components/dashboard/AddService/AddService";
@@ -15,6 +14,8 @@ import Jobs from "./components/Jobs/Jobs";
 import Mission from "./components/Mission/Mission";
 import Contact from './components/Contact/Contact';
 import Privacy from './components/Privacy/Privacy';
+import ManageAnnouncement from "./components/dashboard/ManageAnnouncement/ManageAnnouncement";
+import AnnouncementDetails from "./components/AnnouncementDetails/AnnouncementDetails";
 function App() {
   return (
     <Box>
@@ -24,9 +25,9 @@ function App() {
           <Route path="/mission" element={<Mission />} />
           <Route path="/job" element={<Jobs />} />
           <Route path="/company" element={<Company />} />
-          <Route path="/samplepage" element={<SamplePage />} />
           <Route path="/privacy" element={<Privacy />} />
-            <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/announcementdetails/:announcementdetailsId" element={<AnnouncementDetails />} />
           <Route path="/dashboard/*" element={<Dashboard />}>
             <Route path="makeAdmin" element={<MakeAdmin />} />
             <Route path="addservice" element={<AddService />} />
@@ -34,6 +35,7 @@ function App() {
             <Route path="addslide" element={<AddSlide />} />
             <Route path="manageslide" element={<ManageSlide />} />
             <Route path="manageservices" element={<ManageServices />} />
+            <Route path="manageannouncement" element={<ManageAnnouncement />} />
             
           </Route>
         </Routes>

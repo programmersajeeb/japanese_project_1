@@ -64,7 +64,7 @@ function Dashboard(props) {
                     <Link
                         style={{
                             textDecoration: "none",
-                            color: "#757575"
+                            color: "#757575", display:"block"
                         }}
                         to="/dashboard/makeAdmin">
                         <Button color="inherit">Make Admin</Button>
@@ -72,7 +72,7 @@ function Dashboard(props) {
                     <Link
                         style={{
                             textDecoration: "none",
-                            color: "#757575"
+                            color: "#757575", display:"block"
                         }}
                         to="/dashboard/addservice">
                         <Button color="inherit">Add Service</Button>
@@ -80,19 +80,22 @@ function Dashboard(props) {
                     <Link
                         style={{
                             textDecoration: "none",
-                            color: "#757575"
+                            color: "#757575", display:"block"
                         }}
                         to="/dashboard/addannouncement">
-                        <Button color="inherit">Add Announcement</Button>
+                        <Button color="inherit">Add Blog</Button>
                     </Link>
-                    <Link style={{ textDecoration: "none", color: "#757575" }} to="/dashboard/addslide">
+                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/dashboard/addslide">
                         <Button color="inherit">Add Slide</Button>
                     </Link>
-                    <Link style={{ textDecoration: "none", color: "#757575" }} to="/dashboard/manageslide">
+                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/dashboard/manageslide">
                         <Button color="inherit">Manage Slides</Button>
                     </Link>
-                    <Link style={{ textDecoration: "none", color: "#757575" }} to="/dashboard/manageservices">
+                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/dashboard/manageservices">
                         <Button color="inherit">Manage Services</Button>
+                    </Link>
+                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/dashboard/manageannouncement">
+                        <Button color="inherit">Manage Blog</Button>
                     </Link>
                 </Box>
 

@@ -3,9 +3,12 @@ import axios from 'axios';
 import {useForm} from "react-hook-form";
 import '../../../assets/css/golobal.css';
 import styles from '../../../assets/css/AddServices.css';
+import form from '../../../assets/css/FormStyle.module.css';
 
 const AddService = () => {
-    const {register, formState: { errors }, handleSubmit, reset} = useForm();
+    const {register, setValue, formState: {
+            errors
+        }, handleSubmit, reset} = useForm();
     const onSubmit = data => {
         console.log(data);
         axios
@@ -22,8 +25,15 @@ const AddService = () => {
             <div className={styles.AddServiceArea}>
                 <h2>Please add a service
                 </h2>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input {...register("icon")} placeholder="Font-awasome icon class name"/>
+                <form onSubmit={handleSubmit(onSubmit)} className={form.form}>
+                    <select {...register("select")} onChange={(e) => setValue('icon', e.target.value, {shouldValidate: true})}
+                        // Using setValue
+                    >
+                        <option value="">Null</option>
+                        <option value="fas fa-users">hi</option>
+                        <option value="2">hellow</option>
+                    </select>
+                    {errors.select && <p>{errors.select.message}</p>}
                     <input
                         {...register("title", { required: true, /*maxLength: 40*/ })}
                         placeholder="Title"/>

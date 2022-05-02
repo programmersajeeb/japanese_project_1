@@ -22,10 +22,10 @@ const Slide = (props) => {
                           {subTitle}
                         </Typography>
                     </Box>
-                    <Box sx={{marginTop:'40px'}}>
+                    {/* <Box sx={{marginTop:'40px'}}>
                       <Link to='#inquirie' className={styles.bannerBtn}>detail</Link>
                       <a href="#inquirie" className={styles.bannerBtn}>inquirie</a>
-                    </Box>
+                    </Box> */}
                   </Box>
                 </Box>
               </Container>
