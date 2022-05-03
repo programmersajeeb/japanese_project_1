@@ -16,7 +16,7 @@ const AddSlide = () => {
 		console.log(image);
 		const data = new FormData();
 		data.append("file", image);
-		data.append("upload_preset", "alumni");
+		data.append("upload_preset", "mijapan");
 		data.append("cloud_name", "dpakfnqvn");
 		fetch("https://api.cloudinary.com/v1_1/dpakfnqvn/image/upload", {
 			method: "post",

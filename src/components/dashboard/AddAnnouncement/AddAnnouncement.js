@@ -15,7 +15,7 @@ const AddAnnouncement = () => {
 		console.log(image);
 		const data = new FormData();
 		data.append("file", image);
-		data.append("upload_preset", "alumni");
+		data.append("upload_preset", "mijapan");
 		data.append("cloud_name", "dpakfnqvn");
 		fetch("https://api.cloudinary.com/v1_1/dpakfnqvn/image/upload", {
 			method: "post",
@@ -49,30 +49,6 @@ const AddAnnouncement = () => {
 				}
 			})
 	};
-
-	// const [loading, setLoading] = useState(false)
-	// const [image, setImage] = useState("")
-
-	// const uploadImage = async e => {
-	//     const files = e.target.files
-	//     const data = new FormData()
-	//     data.append('file', files[0])
-	//     data.append('upload_preset', 'announcement')
-	//     setLoading(true)
-
-	//     const res = await fetch("https://api.cloudinary.com/v1_1/dshzafyu9/image/upload", {
-	//         method:'POST',
-	//         body:data
-	//     })
-	//     const file = await res.json()
-	//     console.log(file)
-	//     setImage(file.secure_url)
-	//     setLoading(false)
-	// }
-
-
-
-
 
 	const date = new Date();
 	const year = date.getFullYear();
