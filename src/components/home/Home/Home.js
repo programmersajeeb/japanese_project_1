@@ -18,7 +18,7 @@ const Home = () => {
 			<Message />
 			<Quote />
 			<Announcements />
-			<ContactArea />
+
 			<Footer />
 		</Box>
 	);

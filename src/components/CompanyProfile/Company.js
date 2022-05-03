@@ -1,6 +1,6 @@
-import { Container, Grid } from '@mui/material'
+import { Box, Container, Grid, Stack, Typography } from '@mui/material'
 import React from 'react'
-import mission from "../../assets/images/office.JPG"
+import office from "../../assets/images/office.JPG"
 import fuji from "../../assets/images/fuji.jpg"
 import Navigation from './../Shared/Navigation/Navigation';
 import Footer from '../Shared/Footer/Footer';
@@ -47,10 +47,50 @@ function Company() {
 
 							</div>
 						</Grid>
-						<Grid item xs={12} md={4}>
-							<img src={mission} alt="" width="100%" />
+						<Grid item xs={12} md={6}>
+							<img src={office} alt="this is ofiice" width="100%" />
 						</Grid>
 					</Grid>
+
+					<Stack
+						sx={{ my: 5 }}
+						direction={{ xs: 'column', sm: 'row' }}
+						spacing={{ xs: 1, sm: 2, md: 18 }}
+					>
+						<Box>
+							<h1>事業内容：</h1>
+
+							<Typography variant="body2">
+								人材紹介事業
+							</Typography>
+							<Typography variant="body2">
+								中古自動車買取
+							</Typography>
+
+						</Box>
+						<Box>
+							<h1>　取得免許番号：</h1>
+
+							<Typography variant="body2">
+								有料職業紹介事業（許可番号/０９－ユ－３００２７８）
+							</Typography>
+
+							<Typography variant="body2">
+								古物商（許可番号/第４１１０３０００１９０９号）
+							</Typography>
+
+						</Box>
+						<Box>
+							<h1>　主要銀行：</h1>
+
+							<Typography variant="body2">
+								JAバンク/お取引店：
+							</Typography>
+							<Typography variant="body2">
+								足利市農業協同組合（西支所）
+							</Typography>
+						</Box>
+					</Stack>
 				</Container>
 			</div>
 
@@ -59,4 +99,4 @@ function Company() {
 	)
 }
 
-export default Company
+export default Company;

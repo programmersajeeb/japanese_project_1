@@ -9,7 +9,7 @@ const AboutTitle = () => {
 			<Container>
 				<Box>
 					<Typography variant="h2" component="h2" className={styles.title}>
-						エムアイジャパン ⇒ 日本企業の紹介先及び派遣先について
+						エムアイジャパン ⇒ 人材紹介事業と中古自動車買取
 					</Typography>
 					<Box className={styles.border}></Box>
 					<Typography variant="body1" gutterBottom={true} className={styles.details}>

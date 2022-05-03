@@ -5,24 +5,24 @@ import styles from '../../../../assets/css/Announcements.module.css';
 import { Link } from 'react-router-dom';
 
 const Announcement = (props) => {
-	const { img, title, date, description } = props.announcement;
+	const { image, title, description, time, _id } = props.announcement;
 	return (
 		<Grid item="item" xs={12} sm={6} md={4} xl={4}>
 			<Box sx={{ boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px' }}>
 				<Box className={styles.img}>
-					<img src={img} alt="" />
+					<img src={image} alt="" />
 					<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className={styles.overlay}>
-						<Link to='/'>
+						<Link to={`/announcementdetails/${_id}`}>
 							<Box sx={{ width: '90%', margin: '0 auto' }}>
 								<Box>
 									<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-										<Link className={styles.overlayIcon} to='/'><i className="fas fa-link"></i></Link>
-										<Link className={styles.overlayIcon} to='/'><i className="fas fa-search"></i></Link>
+										<Link className={styles.overlayIcon} to={`/announcementdetails/${_id}`}><i className="fas fa-link"></i></Link>
+										<Link className={styles.overlayIcon} to={`/announcementdetails/${_id}`}><i className="fas fa-search"></i></Link>
 									</Box>
 									<Typography variant="h2" component="h2" className={styles.overlayTitle}>
 										{title}
 									</Typography>
-									<Link to='/' style={{ display: 'block', textAlign: 'center', color: '#212934', fontSize: '13px' }}>
+									<Link to={`/announcementdetails/${_id}`} style={{ display: 'block', textAlign: 'center', color: '#212934', fontSize: '13px' }}>
 										news
 									</Link>
 								</Box>
@@ -32,13 +32,15 @@ const Announcement = (props) => {
 				</Box>
 				<Box sx={{ padding: '30px 20px' }}>
 					<Box>
-						<Typography variant="h1" component="h2" className={styles.cardTitle}>
-							{title}
-						</Typography>
+						<Link to={`/announcementdetails/${_id}`}>
+							<Typography variant="h1" component="h2" className={styles.cardTitle}>
+								{title}
+							</Typography>
+						</Link>
 						<Typography variant="body1" gutterBottom={true} className={styles.date}>
-							{date} &nbsp;&nbsp;|&nbsp;&nbsp;
+							{time} &nbsp;&nbsp;|&nbsp;&nbsp;
 							<span>
-								<Link to='/' className={styles.notice}>Notice</Link>
+								<Link to={`/announcementdetails/${_id}`} className={styles.notice}>Notice</Link>
 							</span>
 						</Typography>
 					</Box>
@@ -58,7 +60,7 @@ const Announcement = (props) => {
 							alignItems: 'center'
 						}}>
 						<Box>
-							<Link to='/' className={styles.link}>
+							<Link to={`/announcementdetails/${_id}`} className={styles.link}>
 								Read More &gt;
 							</Link>
 						</Box>

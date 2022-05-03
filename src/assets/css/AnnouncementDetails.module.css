@@ -1,0 +1,19 @@
+.title{
+  font-size: 54px !important;
+    line-height: normal !important;
+    /* color: #ffffff; */
+    color: #000;
+    font-weight: 500 !important;
+    text-align: center !important;
+}
+.subTitle{
+  font-size: 32px !important;
+  line-height: 1.3 !important;
+  color: #212934 !important;
+  font-weight: 500 !important;
+}
+.description{
+  color: #4a4e57 !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+}

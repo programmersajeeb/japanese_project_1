@@ -19,7 +19,7 @@ function Jobs() {
 				</div>
 				<Container sx={{ mt: 4 }}>
 					<div>
-						<h1 style={{ textAlign: "center" }}>当社のビジネスは大きく分けて３つとなります。</h1>
+						{/* <h1 style={{ textAlign: "center" }}>当社のビジネスは大きく分けて３つとなります。</h1> */}
 					</div>
 
 					<hr className='style-eight' />

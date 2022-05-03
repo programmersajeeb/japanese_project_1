@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from '@mui/material';
 import React from 'react';
 import '../../../../assets/css/golobal.css';
-import styles from '../../../../assets/css/Service.module.css'
+import styles from '../../../../assets/css/Service.module.css';
 
 const Service = (props) => {
 	const { title, icon, description } = props.service;
