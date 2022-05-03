@@ -31,14 +31,14 @@ const ContactForm = () => {
 									<Grid container spacing={2}>
 										<Grid item xs={12} sm={12} md={6} xl={6}>
 											<Box>
-												<Box><label htmlFor="name">First Name *</label></Box>
+												<Box><label htmlFor="name">氏名 *</label></Box>
 												<input id='name' {...register("firstName", { required: true })} />
 												{errors.firstName?.type === 'required' && "First name is required"}
 											</Box>
 										</Grid>
 										<Grid item xs={12} sm={12} md={6} xl={6}>
 											<Box>
-												<Box><label htmlFor="surname">Surname *</label></Box>
+												<Box><label htmlFor="surname">姓 *</label></Box>
 												<input id='surname' {...register("lastName", { required: true })} />
 												{errors.lastName && "Last name is required"}
 											</Box>
@@ -49,13 +49,13 @@ const ContactForm = () => {
 									<Grid container spacing={2}>
 										<Grid item xs={12} sm={12} md={6} xl={6}>
 											<Box>
-												<Box><label htmlFor="email">Email Address *</label></Box>
+												<Box><label htmlFor="email">メールアドレス  *</label></Box>
 												<input type="email" id='email' {...register("email", { required: true })} />
 											</Box>
 										</Grid>
 										<Grid item xs={12} sm={12} md={6} xl={6}>
 											<Box>
-												<Box><label htmlFor="number">Telephone Number</label></Box>
+												<Box><label htmlFor="number">電話番号</label></Box>
 												<input type="number" id='number' {...register("number", { required: true })} />
 											</Box>
 										</Grid>
@@ -63,12 +63,12 @@ const ContactForm = () => {
 								</Box>
 								<Box>
 									<Box>
-										<Box><label htmlFor="subject">Subject</label></Box>
+										<Box><label htmlFor="subject">主題</label></Box>
 										<input type="text" id='subject' {...register("subject", { required: true })} />
 									</Box>
 
 									<Box>
-										<label htmlFor="message">Message *</label>
+										<label htmlFor="message">メッセージ  *</label>
 										<textarea id='message' />
 									</Box>
 								</Box>
