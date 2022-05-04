@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import React from 'react';
 import Reports from '../Reports/Reports';
 
-const DashboardHome = () => {
+const AdminPanelHome = () => {
   return (
     <Box>
       <Reports />
@@ -10,4 +10,4 @@ const DashboardHome = () => {
   );
 };
 
-export default DashboardHome;
+export default AdminPanelHome;

@@ -5,7 +5,6 @@ import Company from "./components/CompanyProfile/Company";
 import AddAnnouncement from "./components/dashboard/AddAnnouncement/AddAnnouncement";
 import AddService from "./components/dashboard/AddService/AddService";
 import AddSlide from "./components/dashboard/AddSlide/AddSlide";
-import Dashboard from "./components/dashboard/Dashboard/Dashboard";
 import MakeAdmin from "./components/dashboard/MakeAdmin/MakeAdmin";
 import ManageServices from "./components/dashboard/ManageServices/ManageServices";
 import ManageSlide from "./components/dashboard/ManageSlide/ManageSlide";
@@ -16,6 +15,7 @@ import Contact from './components/Contact/Contact';
 import Privacy from './components/Privacy/Privacy';
 import ManageAnnouncement from "./components/dashboard/ManageAnnouncement/ManageAnnouncement";
 import AnnouncementDetails from "./components/AnnouncementDetails/AnnouncementDetails";
+import AdminPanel from "./components/dashboard/AdminPanel/AdminPanel";
 function App() {
   return (
     <Box>
@@ -28,7 +28,7 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/announcementdetails/:announcementdetailsId" element={<AnnouncementDetails />} />
-          <Route path="/dashboard/*" element={<Dashboard />}>
+          <Route path="/adminpanel/*" element={<AdminPanel />}>
             <Route path="makeAdmin" element={<MakeAdmin />} />
             <Route path="addservice" element={<AddService />} />
             <Route path="addannouncement" element={<AddAnnouncement />} />

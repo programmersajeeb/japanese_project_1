@@ -11,11 +11,11 @@ import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import * as React from "react";
 import {Link, Outlet, Route, Routes} from "react-router-dom";
-import DashboardHome from "../DashboardHome/DashboardHome";
+import AdminPanelHome from "../AdminPanelHome/AdminPanelHome";
 
 const drawerWidth = 200;
 
-function Dashboard(props) {
+function AdminPanel(props) {
     const {window} = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const handleDrawerToggle = () => {
@@ -58,15 +58,15 @@ function Dashboard(props) {
                             textDecoration: "none",
                             color: "#757575", display:"block",
                         }}
-                        to="/dashboard">
-                        <Button color="inherit">Home</Button>
+                        to="/adminpanel">
+                        <Button color="inherit">Reports</Button>
                     </Link>
                     <Link
                         style={{
                             textDecoration: "none",
                             color: "#757575", display:"block"
                         }}
-                        to="/dashboard/makeAdmin">
+                        to="/adminpanel/makeAdmin">
                         <Button color="inherit">Make Admin</Button>
                     </Link>
                     <Link
@@ -74,7 +74,7 @@ function Dashboard(props) {
                             textDecoration: "none",
                             color: "#757575", display:"block"
                         }}
-                        to="/dashboard/addservice">
+                        to="/adminpanel/addservice">
                         <Button color="inherit">Add Service</Button>
                     </Link>
                     <Link
@@ -82,19 +82,19 @@ function Dashboard(props) {
                             textDecoration: "none",
                             color: "#757575", display:"block"
                         }}
-                        to="/dashboard/addannouncement">
+                        to="/adminpanel/addannouncement">
                         <Button color="inherit">Add Blog</Button>
                     </Link>
-                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/dashboard/addslide">
+                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/adminpanel/addslide">
                         <Button color="inherit">Add Slide</Button>
                     </Link>
-                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/dashboard/manageslide">
+                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/adminpanel/manageslide">
                         <Button color="inherit">Manage Slides</Button>
                     </Link>
-                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/dashboard/manageservices">
+                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/adminpanel/manageservices">
                         <Button color="inherit">Manage Services</Button>
                     </Link>
-                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/dashboard/manageannouncement">
+                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/adminpanel/manageannouncement">
                         <Button color="inherit">Manage Blog</Button>
                     </Link>
                 </Box>
@@ -201,14 +201,14 @@ function Dashboard(props) {
                 <Toolbar/>
                 <Outlet/>
                 <Routes>
-                    <Route path="/" element={<DashboardHome />}/>
+                    <Route path="/" element={<AdminPanelHome />}/>
                 </Routes>
             </Box>
         </Box>
     );
 }
 
-Dashboard.propTypes = {
+AdminPanel.propTypes = {
     /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -216,4 +216,4 @@ Dashboard.propTypes = {
     window: PropTypes.func
 };
 
-export default Dashboard;
+export default AdminPanel;

@@ -8,7 +8,7 @@ const Service = (props) => {
 	return (
 
 		<Grid item xs={12} sm={6} md={4} xl={4}>
-			<Box sx={{ boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: '10px', padding: '50px 25px' }}>
+			<Box sx={{ boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', borderRadius: '10px', padding: '50px 25px', minHeight:'500px' }}>
 				<Box sx={{ margin: '20px 0' }}>
 					<Box className={styles.icon}><i className={icon} ></i></Box>
 				</Box>
@@ -22,7 +22,6 @@ const Service = (props) => {
 				</Box>
 			</Box>
 		</Grid>
-
 	);
 };
 
