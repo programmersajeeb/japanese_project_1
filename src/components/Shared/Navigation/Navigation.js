@@ -97,7 +97,7 @@ const Navigation = () => {
 							</IconButton>
 							<Box className={navLogo} sx={{ flexGrow: 1 }}>
 								<Link to='/' >
-									<img src={logo} alt="" width="130px" height="100px" />
+									<img src={logo} alt="" width="130px" height="70px" />
 								</Link>
 							</Box>
 							<Box className={navItemContainer}>

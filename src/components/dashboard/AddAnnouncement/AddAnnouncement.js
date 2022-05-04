@@ -4,47 +4,27 @@ import { useForm } from "react-hook-form";
 import '../../../assets/css/golobal.css';
 import styles from '../../../assets/css/AddServices.css';
 import form from '../../../assets/css/FormStyle.module.css';
+import { processFile } from './../../Shared/ProcessFile/processFile';
+import SweetAlert from './../../Shared/Sweetalert/Sweetalert';
 
 const AddAnnouncement = () => {
 	const { register, handleSubmit, reset } = useForm();
-	const [url, setUrl] = useState("");
 
-
-	const processFile = (e) => {
-		var image = e.target.files[0];
-		console.log(image);
-		const data = new FormData();
-		data.append("file", image);
-		data.append("upload_preset", "mijapan");
-		data.append("cloud_name", "dpakfnqvn");
-		fetch("https://api.cloudinary.com/v1_1/dpakfnqvn/image/upload", {
-			method: "post",
-			body: data,
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				setUrl(data.url);
-				console.log(data)
-			})
-			.catch((err) => console.log(err));
-	};
-
-	const onSubmit = data => {
-
+	const onSubmit = async (data) => {
 		const blogData = {
 			title: data.title,
-			image: url,
 			time: data.time,
 			date: data.date,
-			description: data.description
+			description: data.description,
+			image: await processFile(data.image[0])
 		}
 		console.log(blogData);
 
-		axios
+		await axios
 			.post('https://secure-crag-50348.herokuapp.com/announcements', blogData)
 			.then(res => {
 				if (res.data.insertedId) {
-					alert('Added successfully');
+					SweetAlert("Added successfully");
 					reset();
 				}
 			})
@@ -73,17 +53,9 @@ const AddAnnouncement = () => {
 						{...register("title", { required: true, /*maxLength: 40*/ })}
 						placeholder="Title" />
 					<input
-						type="file"
 						{...register("image", { required: true })}
-						onChange={processFile}
+						type="file"
 					/>
-					{/* {
-                        loading?(
-                            <h3>Loading...</h3>
-                        ):(
-                            <img src={image} style={{width:'300px'}} />
-                        )
-                    } */}
 					<input style={{ display: 'none' }} type="text" value={formatted} {...register("time")} />
 					<input style={{ display: 'none' }} type="text" value={new Date()} {...register("date")} />
 					<textarea {...register("description")} placeholder="Description" />

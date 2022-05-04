@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import '../../../assets/css/golobal.css';
 import styles from '../../../assets/css/Announcements.module.css';
 import { useEffect, useState } from 'react';
+import SweetAlert from './../../Shared/Sweetalert/Sweetalert';
 
 const ManageAnnouncement = () => {
 	const [announcements, setAnnouncements] = useState([]);
@@ -21,7 +22,7 @@ const ManageAnnouncement = () => {
 			.then(data => {
 				console.log(data);
 				if (data.deletedCount) {
-					alert('Deleted')
+					SweetAlert("Deleted successfully");
 					const remaining = announcements.filter(announcement => announcement._id !== id);
 					setAnnouncements(remaining);
 				};
@@ -36,7 +37,7 @@ const ManageAnnouncement = () => {
 						<Grid key={announcement._id} item="item" xs={12} sm={6} md={4} xl={4}>
 							<Box sx={{ boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px' }}>
 								<Box className={styles.img}>
-									<img src={announcement.image} alt="" />
+									<img src={announcement?.image?.url} alt="" />
 									<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className={styles.overlay}>
 										<Link to='/'>
 											<Box sx={{ width: '90%', margin: '0 auto' }}>

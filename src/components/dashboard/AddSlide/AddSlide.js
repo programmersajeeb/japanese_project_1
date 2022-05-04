@@ -4,44 +4,28 @@ import { useForm } from "react-hook-form";
 import '../../../assets/css/golobal.css';
 import styles from '../../../assets/css/AddServices.css';
 import form from '../../../assets/css/FormStyle.module.css';
-import { useState } from 'react';
+import { processFile } from './../../Shared/ProcessFile/processFile';
+
+import SweetAlert from './../../Shared/Sweetalert/Sweetalert';
 
 const AddSlide = () => {
 	const { register, handleSubmit, reset } = useForm();
-	const [url, setUrl] = useState("");
 
-
-	const processFile = (e) => {
-		var image = e.target.files[0];
-		console.log(image);
-		const data = new FormData();
-		data.append("file", image);
-		data.append("upload_preset", "mijapan");
-		data.append("cloud_name", "dpakfnqvn");
-		fetch("https://api.cloudinary.com/v1_1/dpakfnqvn/image/upload", {
-			method: "post",
-			body: data,
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				setUrl(data.url);
-				console.log(data)
-			})
-			.catch((err) => console.log(err));
-	};
-
-	const onSubmit = data => {
+	const onSubmit = async (data) => {
+		console.log(data);
 		const slideData = {
 			title: data.title,
 			subTitle: data.subTitle,
-			background: url
+			background: await processFile(data.background[0])
 		}
 
-		axios
+		console.log(slideData);
+
+		await axios
 			.post('https://secure-crag-50348.herokuapp.com/slides', slideData)
 			.then(res => {
 				if (res.data.insertedId) {
-					alert('Added successfully');
+					SweetAlert("Added successfully");
 					reset();
 				}
 			})
@@ -59,10 +43,8 @@ const AddSlide = () => {
 						placeholder="Sub-Title" />
 
 					<input
-						type="file"
 						{...register("background", { required: true })}
-						onChange={processFile}
-
+						type="file"
 					/>
 					<input type="submit" />
 				</form>

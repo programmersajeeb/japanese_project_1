@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import styles from '../../../assets/css/Service.module.css';
 import '../../../assets/css/golobal.css';
+import SweetAlert from './../../Shared/Sweetalert/Sweetalert';
 
 const ManageServices = () => {
 	const [services, setServices] = useState([]);
@@ -19,7 +20,7 @@ const ManageServices = () => {
 			.then(data => {
 				console.log(data);
 				if (data.deletedCount) {
-					alert('Deleted')
+					SweetAlert("Deleted successfully");
 					const remaining = services.filter(service => service._id !== id);
 					setServices(remaining);
 				};

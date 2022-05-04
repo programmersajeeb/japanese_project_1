@@ -5,6 +5,8 @@ import '../../../assets/css/golobal.css';
 import styles from '../../../assets/css/AddServices.css';
 import form from '../../../assets/css/FormStyle.module.css';
 
+import SweetAlert from './../../Shared/Sweetalert/Sweetalert';
+
 const AddService = () => {
 	const { register, setValue, formState: {
 		errors
@@ -15,7 +17,7 @@ const AddService = () => {
 			.post('https://secure-crag-50348.herokuapp.com/products', data)
 			.then(res => {
 				if (res.data.insertedId) {
-					alert('Added successfully');
+					SweetAlert("Added successfully");
 					reset();
 				}
 			})

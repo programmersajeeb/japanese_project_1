@@ -1,7 +1,7 @@
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import '../../../assets/css/golobal.css';
-import Swal from "sweetalert2";
+import SweetAlert from './../../Shared/Sweetalert/Sweetalert';
 
 const Reports = () => {
 	const [reports, setReports] = useState([]);
@@ -18,12 +18,7 @@ const Reports = () => {
 			.then(data => {
 				console.log(data);
 				if (data.deletedCount) {
-					Swal.fire({
-						icon: "success",
-						title: "Deleted",
-						showConfirmButton: false,
-						timer: 1500,
-					});
+					SweetAlert("Deleted successfully");
 					const remaining = reports.filter(report => report._id !== id);
 					setReports(remaining);
 				};

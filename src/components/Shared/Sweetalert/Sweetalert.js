@@ -6,6 +6,6 @@ export default function SweetAlert(titleText, icons = "success") {
 		icon: icons,
 		title: titleText,
 		showConfirmButton: false,
-		timer: 2000,
+		timer: 1500,
 	});
 }

@@ -7,6 +7,7 @@ import { Button, Container, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import styles from '../../../assets/css/Banner.module.css';
 import '../../../assets/css/golobal.css';
+import SweetAlert from './../../Shared/Sweetalert/Sweetalert';
 
 const ManageSlide = () => {
 	const [slides, setSlides] = useState([]);
@@ -24,7 +25,7 @@ const ManageSlide = () => {
 			.then(data => {
 				console.log(data);
 				if (data.deletedCount) {
-					alert('Deleted')
+					SweetAlert("Deleted successfully");
 					const remaining = slides.filter(slide => slide._id !== id);
 					setSlides(remaining);
 				};
@@ -85,7 +86,7 @@ const ManageSlide = () => {
 						slide => <div key={slide._id}>
 							<Box
 								sx={{
-									backgroundImage: `url(${slide.background})`,
+									backgroundImage: `url(${slide.background?.url})`,
 									backgroundRepeat: 'no-repeat',
 									backgroundSize: 'cover',
 									backgroundPosition: 'center'
@@ -129,6 +130,7 @@ const ManageSlide = () => {
 												}}>
 												<Link to='/' className={styles.bannerBtn}>detail</Link>
 												<Button
+													variant="contained"
 													className={styles.bannerBtn}
 													onClick={() => handleDelete(slide._id)}
 													size="large">Delete</Button>
