@@ -1,71 +1,105 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import '../../../../assets/css/golobal.css';
 import styles from '../../../../assets/css/ContactArea.module.css';
 import { Box, Grid, Typography, Container } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import emailjs from '@emailjs/browser';
+import Swal from "sweetalert2";
 
 const ContactForm = () => {
 	const [message, setMessage] = useState("");
 	const { register, formState: { errors }, handleSubmit, reset } = useForm();
-	const onSubmit = data => {
-		console.log(data);
+	const form = useRef();
+
+	const onSubmit = (data, r) => {
+
+		//email js configure
+		const templateId = 'template_cciqade';
+		const serviceId = 'mijapan4';
+		sendFeedback(serviceId, templateId, {
+			name: data.firstName + " " + data.surname,
+			number: data.number,
+			email: data.email,
+			subject: data.subject,
+			message: data.message,
+			reply_to: r.target.reset(),
+		});
+
 		axios
-			.post('http://localhost:8080/reports', data)
+			.post('https://secure-crag-50348.herokuapp.com/reports', data)
 			.then(res => {
 				if (res.data.insertedId) {
-					alert('Report Successfully');
+					Swal.fire({
+						icon: "success",
+						title: "メールを送信します。ありがとうございます。",
+						showConfirmButton: false,
+						timer: 1500,
+					});
 					reset();
 				}
 			})
 	}
-	const date = new Date();
-    const year = date.getFullYear();
-    const month = date.getMonth(); 
-    const day = date.getDate(); 
-    const hours = date.getHours(); 
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
-    
-    const addZero = (num) => `${num}`.padStart(2, '0');
-    
-    const formatted =
-      year +
-      '-' +
-      addZero(month + 1) +
-      '-' +
-      addZero(day) +
-      ' ' +
-      addZero(hours) +
-      ':' +
-      addZero(minutes) +
-			':' +
-			addZero(seconds);
+	const sendFeedback = (serviceId, templateId, variables) => {
+		emailjs
+			.send(serviceId, templateId, variables, 'IhWpm_pjyMpVd2Sz9')
+			.then((res) => {
+				console.log('succes');
+			})
+			.catch((err) => console.error(err.text));
+	};
 
-      console.log(formatted);
-			
-			
+	const date = new Date();
+	const year = date.getFullYear();
+	const month = date.getMonth();
+	const day = date.getDate();
+	const hours = date.getHours();
+	const minutes = date.getMinutes();
+	const seconds = date.getSeconds();
+
+	const addZero = (num) => `${num}`.padStart(2, '0');
+
+	const formatted =
+		year +
+		'-' +
+		addZero(month + 1) +
+		'-' +
+		addZero(day) +
+		' ' +
+		addZero(hours) +
+		':' +
+		addZero(minutes) +
+		':' +
+		addZero(seconds);
+
+	console.log(formatted);
+
+
 	return (
 		<Box sx={{ backgroundColor: "#f2f2f2" }}>
 			<Container sx={{ p: 10, my: 5 }}>
 				<Grid container spacing={5}>
 					<Grid item xs={12} sm={12} md={8} xl={8}>
 						<Box>
-							<form onSubmit={handleSubmit(onSubmit)}>
+							<form ref={form} onSubmit={handleSubmit(onSubmit)}>
 								<Box>
 									<Grid container spacing={2}>
 										<Grid item xs={12} sm={12} md={6} xl={6}>
 											<Box>
-												<Box><label htmlFor="name">First Name *</label></Box>
-												<input id='name' {...register("firstName", { required: true })} />
+												<Box><label htmlFor="name">氏名 / First Name</label></Box>
+												<input
+													id='name'
+													{...register("firstName",
+														{ required: true })}
+
+												/>
 												{errors.firstName?.type === 'required' && "First name is required"}
 											</Box>
 										</Grid>
 										<Grid item xs={12} sm={12} md={6} xl={6}>
 											<Box>
-												<Box><label htmlFor="surname">Surname *</label></Box>
-												<input id='surname' {...register("lastName", { required: true })} />
+												<Box><label htmlFor="surname">姓 / Surname</label></Box>
+												<input id='surname' {...register("surname", { required: true })} />
 												{errors.lastName && "Last name is required"}
 											</Box>
 										</Grid>
@@ -75,13 +109,13 @@ const ContactForm = () => {
 									<Grid container spacing={2}>
 										<Grid item xs={12} sm={12} md={6} xl={6}>
 											<Box>
-												<Box><label htmlFor="email">Email Address *</label></Box>
+												<Box><label htmlFor="email">メールアドレス / Email Address</label></Box>
 												<input type="email" id='email' {...register("email", { required: true })} />
 											</Box>
 										</Grid>
 										<Grid item xs={12} sm={12} md={6} xl={6}>
 											<Box>
-												<Box><label htmlFor="number">Telephone Number</label></Box>
+												<Box><label htmlFor="number">電話番号 / Telephone Number</label></Box>
 												<input type="number" id='number' {...register("number", { required: true })} />
 											</Box>
 										</Grid>
@@ -89,22 +123,22 @@ const ContactForm = () => {
 								</Box>
 								<Box>
 									<Box>
-										<Box><label htmlFor="subject">Subject</label></Box>
+										<Box><label htmlFor="subject">主題 / Subject</label></Box>
 										<input type="text" id='subject' {...register("subject", { required: true })} />
 									</Box>
 									<Box>
-									<input style={{display:'none'}} type="text" value={formatted} {...register("time")} />
+										<input style={{ display: 'none' }} type="text" value={formatted} {...register("time")} />
 									</Box>
 									<Box>
-									<input style={{display:'none'}} type="text" value={new Date()} {...register("date")} />
+										<input style={{ display: 'none' }} type="text" value={new Date()} {...register("date")} />
 									</Box>
 									<Box>
-										<label htmlFor="message">Message *</label>
-										<textarea id='message' {...register("report", { required: true })} />
+										<label htmlFor="message">メッセージ / Massage</label>
+										<textarea id='message' {...register("message", { required: true })} />
 									</Box>
 								</Box>
 
-								<input type="submit" value="Send" />
+								<input type="submit" value="送信 / Send" />
 							</form>
 						</Box>
 					</Grid>

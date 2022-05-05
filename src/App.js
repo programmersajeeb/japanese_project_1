@@ -16,30 +16,37 @@ import Privacy from './components/Privacy/Privacy';
 import ManageAnnouncement from "./components/dashboard/ManageAnnouncement/ManageAnnouncement";
 import AnnouncementDetails from "./components/AnnouncementDetails/AnnouncementDetails";
 import AdminPanel from "./components/dashboard/AdminPanel/AdminPanel";
+import Signin from "./components/Shared/protectedArea/Singin/Signin";
+import Signup from "./components/Shared/protectedArea/Singup/Signup";
+import AuthProvider from "./contexts/AuthProvider/AuthProvider";
+import PrivateRoute from "./components/Shared/protectedArea/PrivateRoute/PrivateRoute";
 function App() {
   return (
     <Box>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/mission" element={<Mission />} />
-          <Route path="/job" element={<Jobs />} />
-          <Route path="/company" element={<Company />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/announcementdetails/:announcementdetailsId" element={<AnnouncementDetails />} />
-          <Route path="/adminpanel/*" element={<AdminPanel />}>
-            <Route path="makeAdmin" element={<MakeAdmin />} />
-            <Route path="addservice" element={<AddService />} />
-            <Route path="addannouncement" element={<AddAnnouncement />} />
-            <Route path="addslide" element={<AddSlide />} />
-            <Route path="manageslide" element={<ManageSlide />} />
-            <Route path="manageservices" element={<ManageServices />} />
-            <Route path="manageannouncement" element={<ManageAnnouncement />} />
-            
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/mission" element={<Mission />} />
+            <Route path="/job" element={<Jobs />} />
+            <Route path="/company" element={<Company />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/announcementdetails/:announcementdetailsId" element={<AnnouncementDetails />} />
+            <Route path="/adminpanel/*" element={<PrivateRoute> <AdminPanel /> </PrivateRoute>}>
+              <Route path="makeAdmin" element={<MakeAdmin />} />
+              <Route path="addservice" element={<AddService />} />
+              <Route path="addannouncement" element={<AddAnnouncement />} />
+              <Route path="addslide" element={<AddSlide />} />
+              <Route path="manageslide" element={<ManageSlide />} />
+              <Route path="manageservices" element={<ManageServices />} />
+              <Route path="manageannouncement" element={<ManageAnnouncement />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </Box>
   );
 }

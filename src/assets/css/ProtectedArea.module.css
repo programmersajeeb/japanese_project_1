@@ -1,0 +1,15 @@
+.inputAlign{
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.inputAlign > :first-child{
+  margin-right: 8px !important;
+}
+.inputAlign > :last-child{
+  margin-left: 8px !important;
+}
+.input{
+  width: 100% !important;
+  margin-bottom: 16px !important;
+}

@@ -13,8 +13,10 @@ import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png';
 import '../../../assets/css/golobal.css';
+import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
+	const {user, logout} = useAuth();
 	const theme = useTheme()
 	const useStyle = makeStyles({
 		navItem: {
@@ -97,7 +99,7 @@ const Navigation = () => {
 							</IconButton>
 							<Box className={navLogo} sx={{ flexGrow: 1 }}>
 								<Link to='/' >
-									<img src={logo} alt="" width="70px" height="70px" />
+									<img src={logo} alt="" width="130px" height="70px" />
 								</Link>
 							</Box>
 							<Box className={navItemContainer}>

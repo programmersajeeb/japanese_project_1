@@ -5,12 +5,12 @@ import styles from '../../../../assets/css/Announcements.module.css';
 import { Link } from 'react-router-dom';
 
 const Announcement = (props) => {
-	const { img, title, description, time, _id } = props.announcement;
+	const { image, title, description, time, _id } = props.announcement;
 	return (
 		<Grid item="item" xs={12} sm={6} md={4} xl={4}>
 			<Box sx={{ boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px' }}>
 				<Box className={styles.img}>
-					<img src={img} alt="" />
+					<img src={image} alt="" />
 					<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className={styles.overlay}>
 						<Link to={`/announcementdetails/${_id}`}>
 							<Box sx={{ width: '90%', margin: '0 auto' }}>
@@ -33,9 +33,9 @@ const Announcement = (props) => {
 				<Box sx={{ padding: '30px 20px' }}>
 					<Box>
 						<Link to={`/announcementdetails/${_id}`}>
-						<Typography variant="h1" component="h2" className={styles.cardTitle}>
-							{title}
-						</Typography>
+							<Typography variant="h1" component="h2" className={styles.cardTitle}>
+								{title}
+							</Typography>
 						</Link>
 						<Typography variant="body1" gutterBottom={true} className={styles.date}>
 							{time} &nbsp;&nbsp;|&nbsp;&nbsp;

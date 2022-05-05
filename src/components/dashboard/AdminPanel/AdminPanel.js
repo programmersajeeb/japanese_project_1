@@ -1,5 +1,5 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -99,13 +99,13 @@ function AdminPanel(props) {
                     </Link>
                 </Box>
 
-            </Box>
-        </div>
-    );
+			</Box>
+		</div>
+	);
 
-    const container = window !== undefined
-        ? () => window().document.body
-        : undefined;
+	const container = window !== undefined
+		? () => window().document.body
+		: undefined;
 
     return (
         <Box sx={{

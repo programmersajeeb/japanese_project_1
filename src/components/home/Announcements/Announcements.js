@@ -8,7 +8,7 @@ import Announcement from '../Announcement/Announcement/Announcement';
 const Announcements = () => {
 	const [announcements, setAnnouncements] = useState([]);
 	useEffect(() => {
-		fetch('http://localhost:8080/announcements')
+		fetch('https://secure-crag-50348.herokuapp.com/announcements')
 			.then(res => res.json())
 			.then(data => setAnnouncements(data))
 	}, []);
@@ -32,7 +32,7 @@ const Announcements = () => {
 					<Box sx={{ marginTop: '30px' }}>
 						<Grid container spacing={2}>
 							{
-								announcements.map(announcement => <Announcement
+								announcements.slice(0, 3).map(announcement => <Announcement
 									key={announcement._id}
 									announcement={announcement}
 								></Announcement>)

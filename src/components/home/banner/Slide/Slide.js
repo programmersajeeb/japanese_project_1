@@ -4,11 +4,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../../../assets/css/golobal.css';
 import styles from '../../../../assets/css/Banner.module.css';
-const Slide = (props) => {
+const Slide = ( props) => {
   const { title, subTitle, background } = props.slide;
   return (
     <div>
-            <Box sx={{backgroundImage:`url(${background})`, backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center'}}>
+            <Box sx={{backgroundImage:`url(${background?.url})`, backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center'}}>
               <Container sx={{width:'100%'}}>
                 <Box sx={{height:'70vh', display:'flex', alignItems:'center'}}>
                   <Box sx={{ width:'100%'}}>
