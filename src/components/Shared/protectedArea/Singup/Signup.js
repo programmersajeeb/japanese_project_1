@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import '../../../../assets/css/golobal.css';
-import styles from '../../../../assets/css/ProtectedArea.module.css';
+// import styles from '../../../../assets/css/ProtectedArea.module.css';
 import logo from '../../../../assets/images/logo.png';
 import useAuth from '../../../../hooks/useAuth';
 

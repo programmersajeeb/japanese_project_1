@@ -1,25 +1,25 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AnnouncementDetails from "./components/AnnouncementDetails/AnnouncementDetails";
 import Company from "./components/CompanyProfile/Company";
+import Contact from './components/Contact/Contact';
 import AddAnnouncement from "./components/dashboard/AddAnnouncement/AddAnnouncement";
 import AddService from "./components/dashboard/AddService/AddService";
 import AddSlide from "./components/dashboard/AddSlide/AddSlide";
+import AdminPanel from "./components/dashboard/AdminPanel/AdminPanel";
 import MakeAdmin from "./components/dashboard/MakeAdmin/MakeAdmin";
+import ManageAnnouncement from "./components/dashboard/ManageAnnouncement/ManageAnnouncement";
 import ManageServices from "./components/dashboard/ManageServices/ManageServices";
 import ManageSlide from "./components/dashboard/ManageSlide/ManageSlide";
 import Home from "./components/home/Home/Home";
 import Jobs from "./components/Jobs/Jobs";
 import Mission from "./components/Mission/Mission";
-import Contact from './components/Contact/Contact';
 import Privacy from './components/Privacy/Privacy';
-import ManageAnnouncement from "./components/dashboard/ManageAnnouncement/ManageAnnouncement";
-import AnnouncementDetails from "./components/AnnouncementDetails/AnnouncementDetails";
-import AdminPanel from "./components/dashboard/AdminPanel/AdminPanel";
+import PrivateRoute from "./components/Shared/protectedArea/PrivateRoute/PrivateRoute";
 import Signin from "./components/Shared/protectedArea/Singin/Signin";
 import Signup from "./components/Shared/protectedArea/Singup/Signup";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
-import PrivateRoute from "./components/Shared/protectedArea/PrivateRoute/PrivateRoute";
 function App() {
   return (
     <Box>
