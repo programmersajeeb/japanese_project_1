@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AnnouncementDetails from "./components/AnnouncementDetails/AnnouncementDetails";
 import Company from "./components/CompanyProfile/Company";
-import Contact from './components/Contact/Contact';
+import Contact from "./components/Contact/Contact";
 import AddAnnouncement from "./components/dashboard/AddAnnouncement/AddAnnouncement";
 import AddService from "./components/dashboard/AddService/AddService";
 import AddSlide from "./components/dashboard/AddSlide/AddSlide";
@@ -15,7 +15,7 @@ import ManageSlide from "./components/dashboard/ManageSlide/ManageSlide";
 import Home from "./components/home/Home/Home";
 import Jobs from "./components/Jobs/Jobs";
 import Mission from "./components/Mission/Mission";
-import Privacy from './components/Privacy/Privacy';
+import Privacy from "./components/Privacy/Privacy";
 import PrivateRoute from "./components/Shared/protectedArea/PrivateRoute/PrivateRoute";
 import Signin from "./components/Shared/protectedArea/Singin/Signin";
 import Signup from "./components/Shared/protectedArea/Singup/Signup";
@@ -34,15 +34,28 @@ function App() {
             <Route path="/company" element={<Company />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/announcementdetails/:announcementdetailsId" element={<AnnouncementDetails />} />
-            <Route path="/adminpanel/*" element={<PrivateRoute> <AdminPanel /> </PrivateRoute>}>
+            <Route
+              path="/announcementdetails/:announcementdetailsId"
+              element={<AnnouncementDetails />}
+            />
+            <Route
+              path="/adminpanel/*"
+              element={
+                <PrivateRoute>
+                  <AdminPanel />
+                </PrivateRoute>
+              }
+            >
               <Route path="makeAdmin" element={<MakeAdmin />} />
               <Route path="addservice" element={<AddService />} />
               <Route path="addannouncement" element={<AddAnnouncement />} />
               <Route path="addslide" element={<AddSlide />} />
               <Route path="manageslide" element={<ManageSlide />} />
               <Route path="manageservices" element={<ManageServices />} />
-              <Route path="manageannouncement" element={<ManageAnnouncement />} />
+              <Route
+                path="manageannouncement"
+                element={<ManageAnnouncement />}
+              />
             </Route>
           </Routes>
         </BrowserRouter>

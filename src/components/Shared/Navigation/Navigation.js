@@ -21,7 +21,7 @@ import logo from "../../../assets/images/logo.png";
 import useAuth from "../../../hooks/useAuth";
 
 const Navigation = () => {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const theme = useTheme();
   const useStyle = makeStyles({
     navItem: {
@@ -175,6 +175,16 @@ const Navigation = () => {
                     プライバシーポリシー
                   </Button>{" "}
                 </NavLink>
+                {user?.email ? (
+                  <NavLink className={navItem} to="/adminpanel">
+                    {" "}
+                    <Button className="navMenu" color="inherit">
+                      管理パネル
+                    </Button>{" "}
+                  </NavLink>
+                ) : (
+                  ""
+                )}
               </Box>
             </Toolbar>
           </Container>

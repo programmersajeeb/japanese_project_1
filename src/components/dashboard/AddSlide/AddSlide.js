@@ -1,12 +1,12 @@
-import React from 'react';
 import axios from 'axios';
+import React from 'react';
 import { useForm } from "react-hook-form";
-import '../../../assets/css/golobal.css';
 import styles from '../../../assets/css/AddServices.css';
 import form from '../../../assets/css/FormStyle.module.css';
+import '../../../assets/css/golobal.css';
 import { processFile } from './../../Shared/ProcessFile/processFile';
-
 import SweetAlert from './../../Shared/Sweetalert/Sweetalert';
+
 
 const AddSlide = () => {
 	const { register, handleSubmit, reset } = useForm();
@@ -18,9 +18,7 @@ const AddSlide = () => {
 			subTitle: data.subTitle,
 			background: await processFile(data.background[0])
 		}
-
-		console.log(slideData);
-
+		
 		await axios
 			.post('https://secure-crag-50348.herokuapp.com/slides', slideData)
 			.then(res => {

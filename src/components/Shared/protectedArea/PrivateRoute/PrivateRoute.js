@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
 
-const PrivateRoute = ({ children, ...rest }) => {
+const PrivateRoute = ({ children }) => {
   const { user, isLoading } = useAuth();
 
   let location = useLocation();
@@ -10,17 +10,14 @@ const PrivateRoute = ({ children, ...rest }) => {
     return (
       <img
         src="https://jthemes.net/themes/html/medservices/files/images/loader.gif"
-        alt=""
+        alt="loader"
       />
     );
   }
-  if (user.email) {
-    return children;
+  if (!user?.email) {
+    return <Navigate to="/signin" state={{ from: location }} replace />;
   }
-  if (user.email) {
-    return <Navigate to="/adminpanel" />;
-  }
-  return <Navigate to="/SignIn" state={{ from: location }} />;
+  return children;
 };
 
 export default PrivateRoute;

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
 import axios from 'axios';
+import React from 'react';
 import { useForm } from "react-hook-form";
-import '../../../assets/css/golobal.css';
 import styles from '../../../assets/css/AddServices.css';
 import form from '../../../assets/css/FormStyle.module.css';
+import '../../../assets/css/golobal.css';
 import { processFile } from './../../Shared/ProcessFile/processFile';
 import SweetAlert from './../../Shared/Sweetalert/Sweetalert';
 
@@ -18,7 +18,7 @@ const AddAnnouncement = () => {
 			description: data.description,
 			image: await processFile(data.image[0])
 		}
-		console.log(blogData);
+		// console.log(blogData);
 
 		await axios
 			.post('https://secure-crag-50348.herokuapp.com/announcements', blogData)

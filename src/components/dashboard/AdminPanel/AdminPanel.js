@@ -10,14 +10,14 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import * as React from "react";
-import { Link, Outlet, Route, Routes } from "react-router-dom";
-// import useAuth from "../../../hooks/useAuth";
+import { Link, NavLink, Outlet, Route, Routes } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import AdminPanelHome from "../AdminPanelHome/AdminPanelHome";
 
 const drawerWidth = 200;
 
 function AdminPanel(props) {
-//   const { user, logout } = useAuth();
+  const { user, logout } = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const handleDrawerToggle = () => {
@@ -191,8 +191,8 @@ function AdminPanel(props) {
           >
             Dashboard
           </Typography>
-          {/* {user?.email ? (
-            <NavLink to="/logout" onClick={logout}>
+          {user?.email ? (
+            <NavLink to="/" onClick={logout}>
               {" "}
               <Button className="navMenu" color="inherit">
                 ログアウト
@@ -200,7 +200,7 @@ function AdminPanel(props) {
             </NavLink>
           ) : (
             ""
-          )} */}
+          )}
         </Toolbar>
       </AppBar>
       <Box
