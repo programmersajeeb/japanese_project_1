@@ -124,7 +124,7 @@ const ManageSlide = () => {
 													{slide.subTitle}
 												</Typography>
 											</Box>
-											<Box className='btnArea'>
+											<Box sx={{justifyContent:'start'}} className='btnArea'>
 												<Box>
 												<Link to={`/adminpanel/slideupdate/${slide._id}`}><Button className='updateBtn'
 													variant="contained"
