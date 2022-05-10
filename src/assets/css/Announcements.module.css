@@ -127,22 +127,3 @@
     color: #FFFFFF !important;
     font-size: 14px;
 }
-.announcementBtn:first-child{
-  margin-right: 10px !important;
-}
-.announcementBtn:last-child{
-  margin-left: 10px !important;
-}
-.announcementBtn{
-  padding: 13px 29px;
-  line-height: 17px !important;
-  font-size: 14px !important;
-  border-radius: 4px !important;
-  background-color: #d23b32 !important;
-  color: #ffffff !important;
-  transition: 0.2s !important;
-}
-.announcementBtn:hover{
-  background: #5aa86c !important;
-  color: #ffffff !important;
-}

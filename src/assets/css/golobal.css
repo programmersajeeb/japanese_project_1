@@ -25,14 +25,21 @@ ul{
   padding: 0 !important;
 }
 .navMenu{
-  color: #212934 !important;
+  color: #212934;
   transition: 0.2s;
-  font-size: 14px !important;
+  font-size: 16px !important;
   letter-spacing: 0 !important;
-  margin-left: 20px !important;
+	padding: 5px 8px !important;
+	border-radius: 5px !important;
+	margin: 0 5px !important;
+	font-weight: 700 !important;
 }
 .navMenu:hover{
-  color: #cf2e2e !important;
+  color: #d23b32 !important;
+	/* background-color: #5aa86c !important; */
+}
+.active{
+	color: #21afe7 !important;
 }
 svg>path{
 	fill: #212934 !important;;
@@ -111,4 +118,56 @@ hr.style-eight:after {
 	color: #fff !important;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+/* Admin Panel */
+.css-8yl01b-MuiPaper-root-MuiAppBar-root {
+	box-shadow: none !important;
+}
+.css-1t29gy6-MuiToolbar-root {
+	min-height: 48px !important;
+}
+
+/* Delete & Update Button */
+.btnArea{
+	margin-top: 40px !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.updateBtn{
+  margin-right: 10px !important;
+}
+.deleteBtn{
+  margin-left: 10px !important;
+}
+
+.deleteBtn{
+  padding: 13px 29px !important;
+  line-height: 17px !important;
+  font-size: 14px !important;
+  border-radius: 4px !important;
+  background-color: #d23b32 !important;
+  color: #ffffff !important;
+  transition: 0.2s !important;
+}
+.deleteBtn:hover{
+  background: #5aa86c !important;
+  color: #ffffff !important;
+}
+.updateBtn{
+  padding: 13px 29px !important;
+  line-height: 17px !important;
+  font-size: 14px !important;
+  border-radius: 4px !important;
+  background-color: #5aa86c !important;
+  color: #ffffff !important;
+  transition: 0.2s !important;
+}
+.updateBtn:hover{
+  background: #d23b32 !important;
+  color: #ffffff !important;
+}
+.css-dzd1b6-MuiTypography-root {
+	margin-top: -26px !important;
 }

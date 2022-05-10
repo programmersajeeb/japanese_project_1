@@ -3,19 +3,22 @@ import { Button } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import * as React from "react";
-import {Link, Outlet, Route, Routes} from "react-router-dom";
+import {NavLink, Outlet, Route, Routes} from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import AdminPanelHome from "../AdminPanelHome/AdminPanelHome";
+import logo from '../../../assets/images/logo.png';
+import '../../../assets/css/AdminPanel.css';
 
 const drawerWidth = 200;
 
 function AdminPanel(props) {
+    const {logout} = useAuth();
     const {window} = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const handleDrawerToggle = () => {
@@ -25,80 +28,81 @@ function AdminPanel(props) {
     const drawer = (
         <div
             style={{
-                backgroundColor: "rgba(193,164,130,.3)",
-                minHeight: "100vh"
+                backgroundColor:'#3f4d67',
+                minHeight: "100vh",
+                overflow:'auto',
             }}>
-            <Toolbar/>
-            <Divider/>
+               
+            <Toolbar>
+                <NavLink style={{ textDecoration: "none", color: "#76fcff" }} to="/">
+                 <img style={{width:'90%', height:'auto', margin:'0 auto', display:'block'}} src={logo} alt="Logo" />
+                </NavLink>
+            </Toolbar>
             <Box style={{
                     paddingLeft: "10px"
                 }}>
                 <Box>
-                    <Box
-                        style={{
-                            textAlign: "left"
-                        }}>
-                        <Link
-                            style={{
-                                textDecoration: "none",
-                                color: "#757575"
-                            }}
-                            to="/">
-                            <Button color="inherit">Luminous</Button>
-                        </Link>
-                    </Box>
-                    <Box
-                        style={{
-                            textAlign: "left"
-                        }}></Box>
-                </Box>
-                <Box>
-                    <Link
+                <Toolbar>
+                <NavLink activeClassName="active" style={{ textDecoration: "none", color: "#96a4be", display:"block", width:'100%' }} to="/adminpanel/massage">
+                        Massage
+                    </NavLink>
+                </Toolbar>
+                <Toolbar>
+                <NavLink activeClassName="active" style={{ textDecoration: "none", color: "#96a4be", display:"block", width:'100%' }} to="/adminpanel/manageslide">
+                        Manage Slides
+                    </NavLink>
+                </Toolbar>
+                <Toolbar>
+                <NavLink activeClassName="active" style={{ textDecoration: "none", color: "#96a4be", display:"block", width:'100%' }} to="/adminpanel/manageservices">
+                        Manage Services
+                    </NavLink>
+                </Toolbar>
+                <Toolbar>
+                <NavLink activeClassName="active" style={{ textDecoration: "none", color: "#96a4be", display:"block", width:'100%' }} to="/adminpanel/manageannouncement">
+                Manage Blog
+                </NavLink>
+                </Toolbar>
+                <Toolbar>
+                <NavLink activeClassName="active" style={{ textDecoration: "none", color: "#96a4be", display:"block", width:'100%' }} to="/adminpanel/manageusers">
+                Manage Users
+                </NavLink>
+                </Toolbar>
+                <Toolbar>
+                <NavLink activeClassName="active"
                         style={{
                             textDecoration: "none",
-                            color: "#757575", display:"block",
-                        }}
-                        to="/adminpanel">
-                        <Button color="inherit">Reports</Button>
-                    </Link>
-                    <Link
-                        style={{
-                            textDecoration: "none",
-                            color: "#757575", display:"block"
+                            color: "#96a4be", display:"block", width:'100%'
                         }}
                         to="/adminpanel/makeAdmin">
-                        <Button color="inherit">Make Admin</Button>
-                    </Link>
-                    <Link
+                       Make Admin
+                    </NavLink>
+                </Toolbar>
+                <Toolbar>
+                <NavLink activeClassName="active" style={{ textDecoration: "none", color: "#96a4be", display:"block", width:'100%' }} to="/adminpanel/addslide">
+                        Add Slide
+                    </NavLink>
+                </Toolbar>
+                <Toolbar>
+                <NavLink activeClassName="active"
                         style={{
                             textDecoration: "none",
-                            color: "#757575", display:"block"
+                            color: "#96a4be", display:"block", width:'100%'
                         }}
                         to="/adminpanel/addservice">
-                        <Button color="inherit">Add Service</Button>
-                    </Link>
-                    <Link
+                       Add Service
+                    </NavLink>
+                </Toolbar>
+                <Toolbar>
+                <NavLink activeClassName="active"
                         style={{
                             textDecoration: "none",
-                            color: "#757575", display:"block"
+                            color: "#96a4be", display:"block", width:'100%'
                         }}
                         to="/adminpanel/addannouncement">
-                        <Button color="inherit">Add Blog</Button>
-                    </Link>
-                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/adminpanel/addslide">
-                        <Button color="inherit">Add Slide</Button>
-                    </Link>
-                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/adminpanel/manageslide">
-                        <Button color="inherit">Manage Slides</Button>
-                    </Link>
-                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/adminpanel/manageservices">
-                        <Button color="inherit">Manage Services</Button>
-                    </Link>
-                    <Link style={{ textDecoration: "none", color: "#757575", display:"block" }} to="/adminpanel/manageannouncement">
-                        <Button color="inherit">Manage Blog</Button>
-                    </Link>
+                        Add Blog
+                    </NavLink>
+                </Toolbar>
                 </Box>
-
 			</Box>
 		</div>
 	);
@@ -109,7 +113,9 @@ function AdminPanel(props) {
 
     return (
         <Box sx={{
-                display: "flex"
+                display: "flex",
+                backgroundColor:'#f4f7fa',
+                minHeight:'100vh'
             }}>
             <CssBaseline/>
             <AppBar
@@ -117,13 +123,13 @@ function AdminPanel(props) {
                 sx={{
                     width: {
                         sm: `calc(100% - ${drawerWidth}px)`,
-                        backgroundColor: "rgba(193,164,130,.3)"
+                        backgroundColor:'#f4f7fa'
                     },
                     ml: {
                         sm: `${drawerWidth}px`
                     }
                 }}>
-                <Toolbar>
+                <Toolbar sx={{padding:'0 10px'}}>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -137,9 +143,12 @@ function AdminPanel(props) {
                         }}>
                         <MenuIcon/>
                     </IconButton>
-                    <Typography variant="h6" noWrap="noWrap" color="#757575" component="div">
-                        Dashboard
+                    <Box sx={{display:'flex', justifyContent:'space-between', alignItems:'center', width:'100%'}}>
+                    <Typography variant="h6" noWrap="noWrap" color="#3d3e3e" textTransform='uppercase' fontWeight="700" fontSize="20px" component="div">
+                        Admin Panel
                     </Typography>
+                    <Button sx={{color:'#21afe7', fontWeight:'700', fontSize:'20px'}} onClick={logout} color="inherit">Signout</Button>
+                    </Box>
                 </Toolbar>
             </AppBar>
             <Box

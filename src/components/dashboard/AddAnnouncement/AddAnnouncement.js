@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import '../../../assets/css/golobal.css';
-import styles from '../../../assets/css/AddServices.css';
-import form from '../../../assets/css/FormStyle.module.css';
+import styles from '../../../assets/css/ContactArea.module.css';
 import { processFile } from './../../Shared/ProcessFile/processFile';
 import SweetAlert from './../../Shared/Sweetalert/Sweetalert';
+import { Box, Button, Container, Typography } from '@mui/material';
 
 const AddAnnouncement = () => {
 	const { register, handleSubmit, reset } = useForm();
@@ -21,7 +21,7 @@ const AddAnnouncement = () => {
 		console.log(blogData);
 
 		await axios
-			.post('https://secure-crag-50348.herokuapp.com/announcements', blogData)
+			.post('http://localhost:8080/announcements', blogData)
 			.then(res => {
 				if (res.data.insertedId) {
 					SweetAlert("Added successfully");
@@ -45,24 +45,32 @@ const AddAnnouncement = () => {
 		addZero(day);
 	console.log(formatted);
 	return (
-		<div>
-			<div className={styles.AddServiceArea}>
-				<h2>Please add a Announcement</h2>
-				<form onSubmit={handleSubmit(onSubmit)} className={form.form}>
-					<input
+		<Box>
+			<Container>
+				<Box>
+				<Box sx={{display:'flex', justifyContent:'center'}} marginBottom='100px'>
+				<Typography variant="h2" component="h2" textAlign='center' fontSize='40px' fontWeight='600' textTransform='uppercase' padding='20px 0' position='fixed' sx={{zIndex:'10', backgroundColor:'#f4f7fa', width:'100%', marginTop:'-9px'}}>アナウンスを追加</Typography>
+				</Box>
+				<Box sx={{zIndex:'-10'}} className={styles.contactArea}>
+				<form onSubmit={handleSubmit(onSubmit)}>
+					<Box width='100%'><input className={styles.input}
 						{...register("title", { required: true, /*maxLength: 40*/ })}
-						placeholder="Title" />
-					<input
+						placeholder="Title" /></Box>
+					<Box><input className={styles.input}
 						{...register("image", { required: true })}
 						type="file"
-					/>
-					<input style={{ display: 'none' }} type="text" value={formatted} {...register("time")} />
-					<input style={{ display: 'none' }} type="text" value={new Date()} {...register("date")} />
-					<textarea {...register("description")} placeholder="Description" />
-					<input type="submit" />
+					/></Box>
+					<Box>
+					<input className={styles.input} style={{ display: 'none' }} type="text" value={formatted} {...register("time")} />
+					</Box>
+					<Box><input className={styles.input} style={{ display: 'none' }} type="text" value={new Date()} {...register("date")} /></Box>
+					<Box><textarea className={styles.input} {...register("description")} placeholder="Description" /></Box>
+					<Box width='100%'><Button className={styles.submitBtn} variant="contained" type="submit"> 参加する / Submit </Button></Box>
 				</form>
-			</div>
-		</div>
+			</Box>
+				</Box>
+			</Container>
+		</Box>
 	);
 };
 

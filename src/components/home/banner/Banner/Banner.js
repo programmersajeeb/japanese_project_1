@@ -9,7 +9,7 @@ import { Box } from "@mui/material";
 const Banner = () => {
 	const [slides, setSlides] = useState([]);
 	useEffect(() => {
-		fetch('https://secure-crag-50348.herokuapp.com/slides')
+		fetch('http://localhost:8080/slides')
 			.then(res => res.json())
 			.then(data => setSlides(data))
 	}, []);

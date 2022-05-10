@@ -4,17 +4,18 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../../assets/css/Service.module.css';
 import '../../../assets/css/golobal.css';
 import SweetAlert from './../../Shared/Sweetalert/Sweetalert';
+import { Link } from 'react-router-dom';
 
 const ManageServices = () => {
 	const [services, setServices] = useState([]);
 	useEffect(() => {
-		fetch('https://secure-crag-50348.herokuapp.com/products')
+		fetch('http://localhost:8080/products')
 			.then(res => res.json())
 			.then(data => setServices(data))
 	}, []);
 
 	const handleDelete = id => {
-		const url = `https://secure-crag-50348.herokuapp.com/products/${id}`;
+		const url = `http://localhost:8080/products/${id}`;
 		fetch(url, { method: 'DELETE' })
 			.then(res => res.json())
 			.then(data => {
@@ -62,12 +63,20 @@ const ManageServices = () => {
 												{service.description}
 											</Typography>
 										</Box>
-										<Box sx={{ display: 'flex', justifyContent: 'center' }}>
-											<Button
-												className={styles.bannerBtn}
-												onClick={() => handleDelete(service._id)}
-												size="large">Delete</Button>
-										</Box>
+										<Box className='btnArea'>
+												<Box>
+												<Link to={`/adminpanel/serviceupdate/${service._id}`}><Button className='updateBtn'
+													variant="contained"
+													size="large">Update</Button></Link>
+												</Box>
+												<Box>
+												<Button
+													variant="contained"
+													className='deleteBtn'
+													onClick={() => handleDelete(service._id)}
+													size="large">Delete</Button>
+												</Box>
+											</Box>
 									</Box>
 								</Grid>
 							)

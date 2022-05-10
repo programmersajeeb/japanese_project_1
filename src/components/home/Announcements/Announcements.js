@@ -8,7 +8,7 @@ import Announcement from '../Announcement/Announcement/Announcement';
 const Announcements = () => {
 	const [announcements, setAnnouncements] = useState([]);
 	useEffect(() => {
-		fetch('https://secure-crag-50348.herokuapp.com/announcements')
+		fetch('http://localhost:8080/announcements')
 			.then(res => res.json())
 			.then(data => setAnnouncements(data))
 	}, []);

@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 import '../../../assets/css/golobal.css';
 import styles from '../../../assets/css/Footer.module.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Footer = () => {
 	return (
@@ -11,7 +11,7 @@ const Footer = () => {
 			<Container sx={{ padding: '50px 0' }}>
 				<Grid container spacing={2} className={styles.footer}>
 					<Grid xs={12} sm={6} md={4} xl={4}>
-						<Box>
+						<Box sx={{padding:'0 0 0 20px'}}>
 							<Typography variant="body1" gutterBottom={true} className={styles.title}>
 								株式会社　エムアイジャパン　について
 							</Typography>
@@ -35,15 +35,15 @@ const Footer = () => {
 					<Grid xs={12} sm={6} md={4} xl={4}>
 						<Box sx={{ padding: '0 20px' }}>
 							<Typography variant="body1" gutterBottom={true} className={styles.title}>
-								QUICK LINK
+							クイックリンク
 							</Typography>
 							<ul className={styles.menu}>
-								<li><Link to='/home' className={styles.link}>&gt; ホーム</Link></li>
-								<li><Link to='/mission' className={styles.link}>&gt; ミッション</Link></li>
-								<li><Link to='/job' className={styles.link}>&gt; 仕事</Link></li>
-								<li><Link to='/company' className={styles.link}>&gt; 会社概要</Link></li>
-								<li><Link to='/contact' className={styles.link}>&gt; お問合せ</Link></li>
-								<li><Link to='/privacy' className={styles.link}>&gt; プライバシーポリシー</Link></li>
+								<li><NavLink style={{fontWeight:'700'}} to='/' activeClassName="active" className={styles.link}>&gt; ホーム</NavLink></li>
+								<li><NavLink style={{fontWeight:'700'}} to='/mission' activeClassName="active" className={styles.link}>&gt; ミッション</NavLink></li>
+								<li><NavLink style={{fontWeight:'700'}} to='/job' activeClassName="active" className={styles.link}>&gt; 仕事</NavLink></li>
+								<li><NavLink style={{fontWeight:'700'}} to='/company' activeClassName="active" className={styles.link}>&gt; 会社概要</NavLink></li>
+								<li><NavLink style={{fontWeight:'700'}} to='/contact' activeClassName="active" className={styles.link}>&gt; お問合せ</NavLink></li>
+								<li><NavLink style={{fontWeight:'700'}} to='/privacy' activeClassName="active" className={styles.link}>&gt; プライバシーポリシー</NavLink></li>
 							</ul>
 						</Box>
 					</Grid>

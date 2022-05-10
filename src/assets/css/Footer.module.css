@@ -26,7 +26,7 @@
   padding: 10px 0 !important;
 }
 .menu > li {
-  border-bottom: 1px solid var(--ebony-clay);
+  border-bottom: 1px solid var(--green);
 }
 .link{
   color: var(--white) !important;
@@ -41,7 +41,7 @@
   margin: 0 10px 10px;
   cursor: pointer;
   transition-duration: .2s;
-  color: rgba(15, 14, 14, 0.8);
+  color: rgba(255,255,255,0.4) !important;
 }
 .footerSocial{
   display: inline-block;
@@ -67,4 +67,10 @@
 }
 .footerSocial:hover .tooltiptext {
   visibility: visible;
+}
+
+@media only screen and (max-width: 768px){
+  .footer{
+    padding: 0 10px;
+  }
 }

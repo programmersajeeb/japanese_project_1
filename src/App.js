@@ -20,6 +20,12 @@ import Signin from "./components/Shared/protectedArea/Singin/Signin";
 import Signup from "./components/Shared/protectedArea/Singup/Signup";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import PrivateRoute from "./components/Shared/protectedArea/PrivateRoute/PrivateRoute";
+import NotFound from "./components/NotFound/NotFound";
+import AnnouncementUpdate from "./components/dashboard/ManageUpdate/AnnouncementUpdate/AnnouncementUpdate";
+import ManageUsers from "./components/dashboard/ManageUsers/ManageUsers/ManageUsers";
+import SlideUpdate from "./components/dashboard/ManageSlideUpdate/SlideUpdate";
+import ServiceUpdate from "./components/dashboard/ManageServiceUpdate/ServiceUpdate";
+import Reports from "./components/dashboard/Reports/Reports";
 function App() {
   return (
     <Box>
@@ -41,9 +47,15 @@ function App() {
               <Route path="addannouncement" element={<AddAnnouncement />} />
               <Route path="addslide" element={<AddSlide />} />
               <Route path="manageslide" element={<ManageSlide />} />
+              <Route path="manageusers" element={<ManageUsers />} />
+              <Route path="massage" element={<Reports />} />
               <Route path="manageservices" element={<ManageServices />} />
               <Route path="manageannouncement" element={<ManageAnnouncement />} />
+              <Route path="announcementupdate/:announcementupdateId" element={<AnnouncementUpdate />} />
+              <Route path="slideupdate/:slideupdateupdateId" element={<SlideUpdate />} />
+              <Route path="serviceupdate/:serviceupdateupdateId" element={<ServiceUpdate />} />
             </Route>
+            <Route path="*" element={ <NotFound /> } />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

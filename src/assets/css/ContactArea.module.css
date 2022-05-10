@@ -40,9 +40,13 @@
 }
 
 /* Form Area */
-input, textarea{
+.contactArea{
+  width: 70% !important;
+  margin: 0 auto !important;
+}
+input, textarea, select{
   width: 100%;
-  padding: 12px 20px;
+  padding: 16.5px 14px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -51,12 +55,8 @@ input, textarea{
   color: #9ea0a4;
 }
 textarea {
-  height: 150px;
-  resize: none;
-}
-input[type="submit"]{
-  width: min-content;
-  cursor: pointer;
+  height: 150px !important;
+  resize: none !important;
 }
 .contactUl {
   margin: 10px 0 0;
@@ -77,4 +77,50 @@ input[type="submit"]{
 }
 .link:hover{
   color: var(--red);
+}
+
+.inputAlign{
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.inputAlign > :first-child{
+  margin-right: 8px !important;
+}
+.inputAlign > :last-child{
+  margin-left: 8px !important;
+}
+.input{
+  width: 100% !important;
+  margin-bottom: 16px !important;
+}
+.input:focus{
+  border-color: #65bc7b !important;
+  outline: #65bc7b !important;
+}
+.submitBtn{
+  padding: 16.5px 14px !important;
+  line-height: 17px !important;
+  font-size: 16px !important;
+  border-radius: 4px !important;
+  background-color: #5aa86c !important;
+  color: #ffffff !important;
+  transition: 0.2s !important;
+  display: block !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+.submitBtn:hover{
+  background: #d23b32 !important;
+  color: #ffffff !important;
+}
+@media only screen and (max-width: 991px){
+  .contactArea{
+    width: 80% !important;
+  }
+}
+@media only screen and (max-width: 768px){
+  .contactArea{
+    width: 100% !important;
+  }
 }

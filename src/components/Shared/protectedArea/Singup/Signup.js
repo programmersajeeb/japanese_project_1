@@ -6,6 +6,7 @@ import '../../../../assets/css/golobal.css';
 import styles from '../../../../assets/css/ProtectedArea.module.css';
 import logo from '../../../../assets/images/logo.png';
 import useAuth from '../../../../hooks/useAuth';
+import SweetAlert from '../../Sweetalert/Sweetalert';
 
 const Signup = () => {
     const [loginData, setLoginData] = useState({});
@@ -83,9 +84,8 @@ const Signup = () => {
                                 </NavLink>
                             </form>
                     }
-                    {isLoading && <CircularProgress/>}
                     {
-                        user?.email && <Alert severity="success">User created successfuly!</Alert>
+                        user?.email && SweetAlert("Signup Successfully")
                     }
                     {authErorr && <Alert severity="error">{authErorr}</Alert>}
               </Box>

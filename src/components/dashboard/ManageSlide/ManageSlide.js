@@ -13,13 +13,13 @@ const ManageSlide = () => {
 	const [slides, setSlides] = useState([]);
 	console.log(slides);
 	useEffect(() => {
-		fetch('https://secure-crag-50348.herokuapp.com/slides')
+		fetch('http://localhost:8080/slides')
 			.then(res => res.json())
 			.then(data => setSlides(data))
 	}, []);
 
 	const handleDelete = id => {
-		const url = `https://secure-crag-50348.herokuapp.com/slides/${id}`;
+		const url = `http://localhost:8080/slides/${id}`;
 		fetch(url, { method: 'DELETE' })
 			.then(res => res.json())
 			.then(data => {
@@ -124,16 +124,19 @@ const ManageSlide = () => {
 													{slide.subTitle}
 												</Typography>
 											</Box>
-											<Box
-												sx={{
-													marginTop: '40px'
-												}}>
-												<Link to='/' className={styles.bannerBtn}>detail</Link>
+											<Box className='btnArea'>
+												<Box>
+												<Link to={`/adminpanel/slideupdate/${slide._id}`}><Button className='updateBtn'
+													variant="contained"
+													size="large">Update</Button></Link>
+												</Box>
+												<Box>
 												<Button
 													variant="contained"
-													className={styles.bannerBtn}
+													className='deleteBtn'
 													onClick={() => handleDelete(slide._id)}
 													size="large">Delete</Button>
+												</Box>
 											</Box>
 										</Box>
 									</Box>

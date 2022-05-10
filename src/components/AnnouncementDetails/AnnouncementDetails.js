@@ -9,19 +9,21 @@ import '../../assets/css/golobal.css';
 const AnnouncementDetails = () => {
 	const { announcementdetailsId } = useParams();
 	const [announcements, setAnnouncements] = useState([]);
-	const { img, title, description } = announcements;
+	const { title, description } = announcements;
 	useEffect(() => {
-		fetch(`https://secure-crag-50348.herokuapp.com/announcements/${announcementdetailsId}`)
+		fetch(`http://localhost:8080/announcements/${announcementdetailsId}`)
 			.then(res => res.json())
 			.then(data => setAnnouncements(data))
-	}, []);
+	}, [announcementdetailsId]);
 	return (
 		<Box>
 			<Navigation />
-			<Box sx={{ backgroundImage: `url(${img})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-				<Container sx={{ width: '100%', height: '30vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+			<Box sx={{ backgroundImage: `url(${announcements?.image?.url})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+				<Box sx={{width:'100%', height:'100%', backgroundColor:'#64b78d7a'}}>
+				<Container sx={{ width: '100%', height: '50vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 					<Typography variant="h2" component="h2" className={styles.title}> {title} </Typography>
 				</Container>
+				</Box>
 			</Box>
 			<Box sx={{ padding: '50px 0' }}>
 				<Container>

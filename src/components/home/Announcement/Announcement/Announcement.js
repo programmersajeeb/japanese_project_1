@@ -10,7 +10,7 @@ const Announcement = (props) => {
 		<Grid item="item" xs={12} sm={6} md={4} xl={4}>
 			<Box sx={{ boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px' }}>
 				<Box className={styles.img}>
-					<img src={image} alt="" />
+					<img src={image?.url} alt="" />
 					<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className={styles.overlay}>
 						<Link to={`/announcementdetails/${_id}`}>
 							<Box sx={{ width: '90%', margin: '0 auto' }}>
@@ -23,7 +23,7 @@ const Announcement = (props) => {
 										{title}
 									</Typography>
 									<Link to={`/announcementdetails/${_id}`} style={{ display: 'block', textAlign: 'center', color: '#212934', fontSize: '13px' }}>
-										news
+									お知らせ
 									</Link>
 								</Box>
 							</Box>
@@ -40,7 +40,7 @@ const Announcement = (props) => {
 						<Typography variant="body1" gutterBottom={true} className={styles.date}>
 							{time} &nbsp;&nbsp;|&nbsp;&nbsp;
 							<span>
-								<Link to={`/announcementdetails/${_id}`} className={styles.notice}>Notice</Link>
+								<Link to={`/announcementdetails/${_id}`} className={styles.notice}>お知らせ</Link>
 							</span>
 						</Typography>
 					</Box>

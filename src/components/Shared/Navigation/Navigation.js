@@ -2,7 +2,6 @@ import { AppBar, Container, IconButton, Toolbar, useTheme } from '@mui/material'
 import { Box } from '@mui/system';
 import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import Drawer from '@mui/material/Drawer';
@@ -10,13 +9,13 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { Link } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png';
 import '../../../assets/css/golobal.css';
 import useAuth from '../../../hooks/useAuth';
+// import '../../../assets/css/Navigation.css';
 
 const Navigation = () => {
-	const {user, logout} = useAuth();
 	const theme = useTheme()
 	const useStyle = makeStyles({
 		navItem: {
@@ -54,32 +53,33 @@ const Navigation = () => {
 		>
 			<List>
 				<ListItem button>
-					<ListItemText> <Link className={`mobileNavItem navMenu`} to='/'>ホーム</Link> </ListItemText>
+					<ListItemText> <NavLink className={`mobileNavItem navMenu`} to='/'>ホーム</NavLink> </ListItemText>
 				</ListItem>
 				<Divider />
 				<ListItem button>
-					<ListItemText> <Link className={`mobileNavItem navMenu`} to='/mission'>ミッション</Link> </ListItemText>
+					<ListItemText> <NavLink className={`mobileNavItem navMenu`} to='/mission'>ミッション</NavLink> </ListItemText>
 				</ListItem>
 				<Divider />
 				<ListItem button>
-					<ListItemText> <Link className={`mobileNavItem navMenu`} to='/job'>仕事</Link> </ListItemText>
+					<ListItemText> <NavLink className={`mobileNavItem navMenu`} to='/job'>仕事</NavLink> </ListItemText>
 				</ListItem>
 				<Divider />
 				<ListItem button>
-					<ListItemText> <Link className={`mobileNavItem navMenu`} to='/company'>会社概要</Link> </ListItemText>
+					<ListItemText> <NavLink className={`mobileNavItem navMenu`} to='/company'>会社概要</NavLink> </ListItemText>
 				</ListItem>
 				<Divider />
 				<ListItem button>
-					<ListItemText> <Link className={`mobileNavItem navMenu`} to='/contact'>お問合せ</Link> </ListItemText>
+					<ListItemText> <NavLink className={`mobileNavItem navMenu`} to='/contact'>お問合せ</NavLink> </ListItemText>
 				</ListItem>
 				<Divider />
 				<ListItem button>
-					<ListItemText> <Link className={`mobileNavItem navMenu`} to='/privacy'>プライバシーポリシー</Link> </ListItemText>
+					<ListItemText> <NavLink className={`mobileNavItem navMenu`} to='/privacy'>プライバシーポリシー</NavLink> </ListItemText>
 				</ListItem>
 				<Divider />
 			</List>
 		</Box>
 	);
+	const {user, logout, admin} = useAuth();
 	return (
 		<>
 			<Box sx={{ flexGrow: 1, width: '100%', height: '74px' }}>
@@ -103,12 +103,12 @@ const Navigation = () => {
 								</Link>
 							</Box>
 							<Box className={navItemContainer}>
-								<NavLink className={navItem} to="/"> <Button className='navMenu' color="inherit">ホーム</Button> </NavLink>
-								<NavLink className={navItem} to="/mission"> <Button className='navMenu' color="inherit">ミッション</Button> </NavLink>
-								<NavLink className={navItem} to="/job"> <Button className='navMenu' color="inherit">仕事</Button> </NavLink>
-								<NavLink className={navItem} to="/company"> <Button className='navMenu' color="inherit">会社概要</Button> </NavLink>
-								<NavLink className={navItem} to="/contact"> <Button className='navMenu' color="inherit">お問合せ</Button> </NavLink>
-								<NavLink className={navItem} to="/privacy"> <Button className='navMenu' color="inherit">プライバシーポリシー</Button> </NavLink>
+								<NavLink className={`navItem navMenu`} activeClassName="active" to="/"> ホーム</NavLink>
+								<NavLink className={`navItem navMenu`} activeClassName="active" to="/mission">ミッション</NavLink>
+								<NavLink className={`navItem navMenu`} activeClassName="active" to="/job"> 仕事</NavLink>
+								<NavLink className={`navItem navMenu`} activeClassName="active" to="/company">会社概要</NavLink>
+								<NavLink className={`navItem navMenu`} activeClassName="active" to="/contact">お問合せ</NavLink>
+								<NavLink className={`navItem navMenu`} activeClassName="active" to="/privacy">プライバシーポリシー</NavLink>
 							</Box>
 						</Toolbar>
 					</Container>

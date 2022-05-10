@@ -10,13 +10,13 @@ const ManageAnnouncement = () => {
 	const [announcements, setAnnouncements] = useState([]);
 
 	useEffect(() => {
-		fetch('https://secure-crag-50348.herokuapp.com/announcements')
+		fetch('http://localhost:8080/announcements')
 			.then(res => res.json())
 			.then(data => setAnnouncements(data))
 	}, []);
 
 	const handleDelete = id => {
-		const url = `https://secure-crag-50348.herokuapp.com/announcements/${id}`;
+		const url = `http://localhost:8080/announcements/${id}`;
 		fetch(url, { method: 'DELETE' })
 			.then(res => res.json())
 			.then(data => {
@@ -31,7 +31,8 @@ const ManageAnnouncement = () => {
 	};
 	return (
 		<Box>
-			<Grid container spacing={2}>
+		<Box>
+			<Grid container spacing={2} >
 				{
 					announcements.map(announcement =>
 						<Grid key={announcement._id} item="item" xs={12} sm={6} md={4} xl={4}>
@@ -39,7 +40,7 @@ const ManageAnnouncement = () => {
 								<Box className={styles.img}>
 									<img src={announcement?.image?.url} alt="" />
 									<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className={styles.overlay}>
-										<Link to='/'>
+										<Link to={`/announcementdetails/${announcement._id}`}>
 											<Box sx={{ width: '90%', margin: '0 auto' }}>
 												<Box>
 													<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -49,7 +50,7 @@ const ManageAnnouncement = () => {
 													<Typography variant="h2" component="h2" className={styles.overlayTitle}>
 														{announcement.title}
 													</Typography>
-													<Link to='/' style={{ display: 'block', textAlign: 'center', color: '#212934', fontSize: '13px' }}>
+													<Link to={`/announcementdetails/${announcement._id}`}  style={{ display: 'block', textAlign: 'center', color: '#212934', fontSize: '13px' }}>
 														news
 													</Link>
 												</Box>
@@ -59,13 +60,15 @@ const ManageAnnouncement = () => {
 								</Box>
 								<Box sx={{ padding: '30px 20px' }}>
 									<Box>
-										<Typography variant="h1" component="h2" className={styles.cardTitle}>
-											{announcement.title}
-										</Typography>
+										<Link to={`/announcementdetails/${announcement._id}`}>
+											<Typography variant="h1" component="h2" className={styles.cardTitle}>
+												{announcement.title}
+											</Typography>
+										</Link>
 										<Typography variant="body1" gutterBottom={true} className={styles.date}>
 											{announcement.time} &nbsp;&nbsp;|&nbsp;&nbsp;
 											<span>
-												<Link to='/' className={styles.notice}>Notice</Link>
+												<Link to={`/announcementdetails/${announcement._id}`} className={styles.notice}>Notice</Link>
 											</span>
 										</Typography>
 									</Box>
@@ -78,22 +81,27 @@ const ManageAnnouncement = () => {
 											{announcement.description}
 										</Typography>
 									</Box>
-									<Box
-										sx={{
-											display: 'flex',
-											justifyContent: 'center',
-											alignItems: 'center',
-											marginTop: '40px'
-										}}>
-										<Button className={styles.announcementBtn} size="large">Update</Button>
-										<Button className={styles.announcementBtn} onClick={() => handleDelete(announcement._id)} size="large">Delete</Button>
-									</Box>
+									<Box className='btnArea'>
+												<Box>
+												<Link to={`/adminpanel/announcementupdate/${announcement._id}`}><Button className='updateBtn'
+													variant="contained"
+													size="large">Update</Button></Link>
+												</Box>
+												<Box>
+												<Button
+													variant="contained"
+													className='deleteBtn'
+													onClick={() => handleDelete(announcement._id)}
+													size="large">Delete</Button>
+												</Box>
+											</Box>
 								</Box>
 							</Box >
 						</Grid >
 					)
 				}
 			</Grid>
+		</Box>
 		</Box>
 	);
 };

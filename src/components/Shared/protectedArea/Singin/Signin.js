@@ -1,15 +1,16 @@
-import { Alert, Button, CircularProgress, Container, Grid, TextField } from '@mui/material';
+import { Alert, Button, Container, Grid, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink,  useLocation,  useNavigate } from 'react-router-dom';
 import '../../../../assets/css/golobal.css';
 import styles from '../../../../assets/css/ProtectedArea.module.css';
 import logo from '../../../../assets/images/logo.png';
 import useAuth from '../../../../hooks/useAuth';
+import SweetAlert from '../../Sweetalert/Sweetalert';
 
 const Signin = () => {
     const [loginData, setLoginData] = useState({})
-    const {user, loginUser, isLoading, authErorr} = useAuth();
+    const {user, loginUser, authErorr} = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -61,9 +62,8 @@ const Signin = () => {
                             <Button variant="text">New User? Please Register</Button>
                         </NavLink>
                     </form>
-                    {isLoading && <CircularProgress/>}
                     {
-                        user?.email && <Alert severity="success">User created successfuly!</Alert>
+                        user?.email && SweetAlert("Signin Successfully")
                     }
                     {authErorr && <Alert severity="error">{authErorr}</Alert>}
               </Box>

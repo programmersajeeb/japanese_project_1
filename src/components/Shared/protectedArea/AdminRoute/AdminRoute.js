@@ -2,8 +2,9 @@ import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 
-const PrivateRoute = ({ children, ...rest }) => {
-    const { user, admin, isLoading } = useAuth();
+const AdminRoute = ({ children, ...rest }) => {
+    // const {admin} = useAuth();
+    const { user, isLoading } = useAuth();
 
     let location = useLocation();
     if (isLoading) {
@@ -15,4 +16,4 @@ const PrivateRoute = ({ children, ...rest }) => {
     return <Navigate to="/signin" state={ { from: location } }  replace />;
 };
 
-export default PrivateRoute;
+export default AdminRoute;
